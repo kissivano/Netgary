@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 function Services({ t }) {
   return (
     <section
@@ -33,9 +35,11 @@ function Services({ t }) {
                 {service.description}
               </p>
 
-              <span className="absolute top-5 right-0 text-lg text-brand transition-transform duration-300 group-hover:translate-x-1 sm:static sm:text-xl">
-                ↗
-              </span>
+              <ArrowUpRight
+                size={19}
+                strokeWidth={1.6}
+                className="absolute top-5 right-0 text-brand transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 sm:static"
+              />
             </div>
           ))}
         </div>

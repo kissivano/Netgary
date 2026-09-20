@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 function Header({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,7 +46,7 @@ function Header({ language, setLanguage, t }) {
 
         {/* RIGHT */}
         <div className="flex items-center gap-4">
-          {/* LANGUAGE SWITCH */}
+          {/* LANGUAGE SWITCH - DESKTOP */}
           <div className="hidden items-center gap-2 text-xs font-medium sm:flex">
             <button
               type="button"
@@ -78,9 +79,11 @@ function Header({ language, setLanguage, t }) {
           <a
             href="#contact"
             onClick={closeMenu}
-            className="rounded-full border border-brand px-4 py-2 text-xs font-medium text-brand transition duration-300 hover:bg-brand hover:text-white sm:text-sm md:px-5 md:py-2.5"
+            className="inline-flex items-center gap-2 rounded-full border border-brand px-4 py-2 text-xs font-medium text-brand transition duration-300 hover:bg-brand hover:text-white sm:text-sm md:px-5 md:py-2.5"
           >
             {t.nav.letsTalk}
+
+            <ArrowUpRight size={15} strokeWidth={1.8} className="shrink-0" />
           </a>
 
           {/* HAMBURGER */}
@@ -150,7 +153,7 @@ function Header({ language, setLanguage, t }) {
             <button
               type="button"
               onClick={() => setLanguage("hu")}
-              className={`transition ${
+              className={`transition duration-300 ${
                 language === "hu" ? "text-brand" : "text-zinc-300"
               }`}
             >
@@ -162,7 +165,7 @@ function Header({ language, setLanguage, t }) {
             <button
               type="button"
               onClick={() => setLanguage("en")}
-              className={`transition ${
+              className={`transition duration-300 ${
                 language === "en" ? "text-brand" : "text-zinc-300"
               }`}
             >

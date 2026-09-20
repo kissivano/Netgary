@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 const codeLines = [
   {
     number: "01",
@@ -128,7 +130,11 @@ function Hero({ t }) {
         {/* LEFT */}
         <div className="relative z-10 max-w-xl">
           <div className="mb-6 flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            {/* AVAILABLE STATUS */}
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+            </span>
 
             <p className="text-sm font-medium text-zinc-500">
               {t.hero.available}
@@ -150,9 +156,11 @@ function Hero({ t }) {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
-              className="rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90"
             >
               {t.hero.primaryButton}
+
+              <ArrowUpRight size={16} strokeWidth={1.8} className="shrink-0" />
             </a>
 
             <a

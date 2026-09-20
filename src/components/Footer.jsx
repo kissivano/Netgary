@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
+
 function Footer({ t }) {
   return (
     <footer className="border-t border-white/10 bg-brand text-white">
@@ -29,9 +31,11 @@ function Footer({ t }) {
             href="https://instagram.com/"
             target="_blank"
             rel="noreferrer"
-            className="transition duration-300 hover:text-white"
+            className="inline-flex items-center gap-1.5 transition duration-300 hover:text-white"
           >
             {t.footer.instagram}
+
+            <ArrowUpRight size={13} strokeWidth={1.8} className="shrink-0" />
           </a>
         </div>
       </div>

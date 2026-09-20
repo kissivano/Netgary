@@ -4,7 +4,7 @@ export const translations = {
       about: "Rólunk",
       services: "Szolgáltatások",
       contact: "Kapcsolat",
-      letsTalk: "Beszéljünk ↗",
+      letsTalk: "Beszéljünk",
     },
 
     hero: {
@@ -103,8 +103,8 @@ export const translations = {
       title3: "együtt.",
       description:
         "Írd meg, min dolgozol, miben lenne szükséged segítségre, vagy mit szeretnél jobbá tenni a jelenlegi weboldaladon.",
-      emailButton: "hello@netgary.com ↗",
-      backToTop: "Vissza az elejére ↑",
+      emailButton: "hello@netgary.com",
+      backToTop: "Vissza az elejére",
       footerLine: "Webfejlesztés · Design · Digitális megoldások",
     },
 
@@ -113,7 +113,7 @@ export const translations = {
       services: "Szolgáltatások",
       about: "Rólunk",
       contact: "Kapcsolat",
-      instagram: "Instagram ↗",
+      instagram: "Instagram",
     },
   },
 
@@ -122,7 +122,7 @@ export const translations = {
       about: "About",
       services: "Services",
       contact: "Contact",
-      letsTalk: "Let's talk ↗",
+      letsTalk: "Let's talk",
     },
 
     hero: {
@@ -221,8 +221,8 @@ export const translations = {
       title3: "together.",
       description:
         "Tell us what you're building, what you need help with, or where your current website could be better.",
-      emailButton: "hello@netgary.com ↗",
-      backToTop: "Back to top ↑",
+      emailButton: "hello@netgary.com",
+      backToTop: "Back to top",
       footerLine: "Web development · Design · Digital products",
     },
 
