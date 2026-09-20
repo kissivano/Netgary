@@ -14,7 +14,7 @@ export const translations = {
       line3: "működnek.",
       description:
         "Modern weboldalak és digitális megoldások letisztult designnal, átgondolt fejlesztéssel és megfelelő technológiával.",
-      primaryButton: "Projekt indítása ↗",
+      primaryButton: "Projekt indítása",
       secondaryButton: "Szolgáltatások",
     },
 
@@ -132,7 +132,7 @@ export const translations = {
       line3: "work.",
       description:
         "Modern websites and digital experiences built with clean design, thoughtful development and the right technology.",
-      primaryButton: "Start a project ↗",
+      primaryButton: "Start a project",
       secondaryButton: "Services",
     },
 
