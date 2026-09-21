@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { translations } from "./data/translations";
 
 import Header from "./components/Header";
@@ -10,11 +11,9 @@ import WhyNetgary from "./components/WhyNetgary";
 import ContactCTA from "./components/ContactCTA";
 import Footer from "./components/Footer";
 
-function App() {
-  const [language, setLanguage] = useState("hu");
+import QuotePage from "./pages/QuotePage";
 
-  const t = translations[language];
-
+function HomePage({ language, setLanguage, t }) {
   return (
     <>
       <Header language={language} setLanguage={setLanguage} t={t} />
@@ -30,6 +29,30 @@ function App() {
 
       <Footer t={t} />
     </>
+  );
+}
+
+function App() {
+  const [language, setLanguage] = useState("hu");
+
+  const t = translations[language];
+
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <HomePage language={language} setLanguage={setLanguage} t={t} />
+        }
+      />
+
+      <Route
+        path="/ajanlat"
+        element={
+          <QuotePage language={language} setLanguage={setLanguage} t={t} />
+        }
+      />
+    </Routes>
   );
 }
 

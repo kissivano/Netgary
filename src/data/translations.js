@@ -97,15 +97,44 @@ export const translations = {
     },
 
     contact: {
-      label: "Indítsunk egy projektet",
-      title1: "Van egy ötleted?",
-      title2: "Építsük meg",
-      title3: "együtt.",
+      label: "Kapcsolat",
+      title1: "Üdvözöllek,",
+      title2: "Kiss Ádám vagyok.",
+      role: "A NETGARY fejlesztője és tulajdonosa",
       description:
-        "Írd meg, min dolgozol, miben lenne szükséged segítségre, vagy mit szeretnél jobbá tenni a jelenlegi weboldaladon.",
-      emailButton: "hello@netgary.com",
-      backToTop: "Vissza az elejére",
+        "Ha van egy ötleted, új weboldalra van szükséged, vagy a meglévőt szeretnéd továbbfejleszteni, beszéljünk róla.",
+      callButton: "Hívás",
+      quoteButton: "Kérj egyedi ajánlatot",
+      response: "Keress bátran, közvetlenül velem fogsz beszélni.",
       footerLine: "Webfejlesztés · Design · Digitális megoldások",
+    },
+
+    quote: {
+      back: "Vissza",
+      label: "Egyedi ajánlat",
+      title1: "Mesélj a",
+      title2: "projektedről.",
+      description:
+        "Töltsd ki az alábbi űrlapot, és a megadott információk alapján elkészítjük a személyre szabott ajánlatodat.",
+
+      form: {
+        name: "Név",
+        namePlaceholder: "Teljes neved",
+
+        email: "E-mail",
+        emailPlaceholder: "pelda@email.hu",
+
+        source: "Honnan hallottál rólam?",
+        sourcePlaceholder: "Válassz egy lehetőséget",
+        recommendation: "Ajánlás",
+        other: "Egyéb",
+
+        project: "Projekt röviden",
+        projectPlaceholder:
+          "Írd le röviden, milyen weboldalt vagy digitális megoldást szeretnél...",
+
+        submit: "Ajánlatkérés elküldése",
+      },
     },
 
     footer: {
@@ -215,15 +244,44 @@ export const translations = {
     },
 
     contact: {
-      label: "Start a project",
-      title1: "Have an idea?",
-      title2: "Let's build it",
-      title3: "together.",
+      label: "Contact",
+      title1: "Hi,",
+      title2: "I'm Ádám Kiss.",
+      role: "Developer & Owner of NETGARY",
       description:
-        "Tell us what you're building, what you need help with, or where your current website could be better.",
-      emailButton: "hello@netgary.com",
-      backToTop: "Back to top",
+        "If you have an idea, need a new website or want to improve an existing one, let's talk about it.",
+      callButton: "Call",
+      quoteButton: "Request a custom quote",
+      response: "Feel free to reach out — you'll be speaking directly with me.",
       footerLine: "Web development · Design · Digital products",
+    },
+
+    quote: {
+      back: "Back",
+      label: "Custom quote",
+      title1: "Tell us about",
+      title2: "your project.",
+      description:
+        "Complete the form below and we'll prepare a custom proposal based on the details of your project.",
+
+      form: {
+        name: "Name",
+        namePlaceholder: "Your full name",
+
+        email: "Email",
+        emailPlaceholder: "name@email.com",
+
+        source: "How did you hear about me?",
+        sourcePlaceholder: "Choose an option",
+        recommendation: "Recommendation",
+        other: "Other",
+
+        project: "Project in brief",
+        projectPlaceholder:
+          "Tell me briefly what kind of website or digital solution you're looking for...",
+
+        submit: "Send quote request",
+      },
     },
 
     footer: {
@@ -231,7 +289,7 @@ export const translations = {
       services: "Services",
       about: "About",
       contact: "Contact",
-      instagram: "Instagram ↗",
+      instagram: "Instagram",
     },
   },
 };
