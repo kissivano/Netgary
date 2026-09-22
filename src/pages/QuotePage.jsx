@@ -10,6 +10,8 @@ function QuotePage({ language, setLanguage, t }) {
     project: "",
   });
 
+  const [status, setStatus] = useState("idle");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -17,12 +19,45 @@ function QuotePage({ language, setLanguage, t }) {
       ...prev,
       [name]: value,
     }));
+
+    if (status !== "idle") {
+      setStatus("idle");
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/send-quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          language,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setStatus("success");
+
+      setFormData({
+        name: "",
+        email: "",
+        source: "",
+        project: "",
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -67,6 +102,7 @@ function QuotePage({ language, setLanguage, t }) {
               </button>
             </div>
 
+            {/* BACK */}
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition duration-300 hover:text-brand"
@@ -166,9 +202,11 @@ function QuotePage({ language, setLanguage, t }) {
               <option value="instagram">Instagram</option>
               <option value="facebook">Facebook</option>
               <option value="google">Google</option>
+
               <option value="recommendation">
                 {t.quote.form.recommendation}
               </option>
+
               <option value="other">{t.quote.form.other}</option>
             </select>
           </div>
@@ -194,16 +232,31 @@ function QuotePage({ language, setLanguage, t }) {
             />
           </div>
 
-          {/* SUBMIT */}
-          <div className="mt-8 flex justify-end">
+          {/* BOTTOM */}
+          <div className="mt-8 flex flex-col items-start gap-4 sm:items-end">
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90"
+              disabled={status === "loading"}
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {t.quote.form.submit}
+              {status === "loading"
+                ? t.quote.form.sending
+                : t.quote.form.submit}
 
               <Send size={16} strokeWidth={1.8} />
             </button>
+
+            {status === "success" && (
+              <p className="text-sm leading-6 text-emerald-600">
+                {t.quote.form.success}
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="text-sm leading-6 text-red-500">
+                {t.quote.form.error}
+              </p>
+            )}
           </div>
         </form>
       </section>

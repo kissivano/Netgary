@@ -134,6 +134,10 @@ export const translations = {
           "Írd le röviden, milyen weboldalt vagy digitális megoldást szeretnél...",
 
         submit: "Ajánlatkérés elküldése",
+        sending: "Küldés...",
+        success:
+          "Köszönöm! Megkaptam az ajánlatkérésedet, hamarosan jelentkezem.",
+        error: "Hiba történt az elküldés közben. Kérlek, próbáld újra.",
       },
     },
 
@@ -281,6 +285,10 @@ export const translations = {
           "Tell me briefly what kind of website or digital solution you're looking for...",
 
         submit: "Send quote request",
+        sending: "Sending...",
+        success:
+          "Thank you! Your request has been received. I'll get back to you soon.",
+        error: "Something went wrong. Please try again.",
       },
     },
 
