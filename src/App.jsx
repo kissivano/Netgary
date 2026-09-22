@@ -12,6 +12,7 @@ import ContactCTA from "./components/ContactCTA";
 import Footer from "./components/Footer";
 
 import QuotePage from "./pages/QuotePage";
+import GoogleAdsPage from "./pages/GoogleAdsPage";
 
 function HomePage({ language, setLanguage, t }) {
   return (
@@ -50,6 +51,13 @@ function App() {
         path="/ajanlat"
         element={
           <QuotePage language={language} setLanguage={setLanguage} t={t} />
+        }
+      />
+
+      <Route
+        path="/google-ads"
+        element={
+          <GoogleAdsPage language={language} setLanguage={setLanguage} />
         }
       />
     </Routes>

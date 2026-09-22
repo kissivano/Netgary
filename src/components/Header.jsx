@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function Header({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,8 +70,9 @@ function Header({ language, setLanguage, t }) {
             {t.nav.services}
           </a>
 
-          <a
-            href="#google-ads"
+          <Link
+            to="/google-ads"
+            onClick={closeMenu}
             className={`text-sm font-medium transition duration-300 ${
               scrolled
                 ? "text-white/65 hover:text-white"
@@ -78,7 +80,7 @@ function Header({ language, setLanguage, t }) {
             }`}
           >
             {t.nav.googleAds}
-          </a>
+          </Link>
 
           <a
             href="#contact"
@@ -180,7 +182,7 @@ function Header({ language, setLanguage, t }) {
       {/* MOBILE MENU */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
-          menuOpen ? "max-h-[440px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[460px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="border-t border-white/10 bg-[#22304b] shadow-[0_20px_35px_rgba(15,23,42,0.18)]">
@@ -201,13 +203,13 @@ function Header({ language, setLanguage, t }) {
               {t.nav.services}
             </a>
 
-            <a
-              href="#google-ads"
+            <Link
+              to="/google-ads"
               onClick={closeMenu}
               className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
               {t.nav.googleAds}
-            </a>
+            </Link>
 
             <a
               href="#contact"
