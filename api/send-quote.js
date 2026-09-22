@@ -59,45 +59,269 @@ export default async function handler(req, res) {
 
       html: isHungarian
         ? `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #283654;">
-            <h2>Szia ${name}!</h2>
+      <div style="
+        margin:0;
+        padding:40px 20px;
+        background:#f5f6f8;
+        font-family:Arial,Helvetica,sans-serif;
+      ">
+        <div style="
+          max-width:620px;
+          margin:0 auto;
+          background:#ffffff;
+          border:1px solid #e7e9ee;
+          border-radius:18px;
+          overflow:hidden;
+        ">
 
-            <p>
+          <div style="
+            padding:28px 32px;
+            border-bottom:1px solid #eceef2;
+          ">
+            <div style="
+              font-size:26px;
+              font-weight:700;
+              color:#283654;
+              letter-spacing:-0.5px;
+            ">
+              NETGARY
+            </div>
+
+            <div style="
+              margin-top:4px;
+              font-size:13px;
+              color:#8a93a5;
+            ">
+              the web partner
+            </div>
+          </div>
+
+          <div style="padding:36px 32px;">
+            <div style="
+              display:inline-block;
+              padding:7px 12px;
+              border-radius:999px;
+              background:#eef8f2;
+              color:#2f7d4f;
+              font-size:12px;
+              font-weight:600;
+              margin-bottom:24px;
+            ">
+              ✓ Ajánlatkérés megérkezett
+            </div>
+
+            <h1 style="
+              margin:0 0 16px;
+              font-size:30px;
+              line-height:1.15;
+              color:#283654;
+            ">
+              Szia ${name}!
+            </h1>
+
+            <p style="
+              margin:0 0 16px;
+              font-size:16px;
+              line-height:1.7;
+              color:#5f6878;
+            ">
               Köszönöm, hogy felvetted velem a kapcsolatot.
             </p>
 
-            <p>
-              Megkaptam az ajánlatkérésedet, hamarosan átnézem a projekt részleteit,
-              és jelentkezem a megadott e-mail címen.
+            <p style="
+              margin:0 0 28px;
+              font-size:16px;
+              line-height:1.7;
+              color:#5f6878;
+            ">
+              Megkaptam az ajánlatkérésedet. Átnézem a projekt részleteit,
+              és hamarosan jelentkezem a megadott e-mail címen.
             </p>
 
-            <p>
+            <div style="
+              padding:18px 20px;
+              background:#f7f8fa;
+              border:1px solid #eceef2;
+              border-radius:14px;
+              margin-bottom:30px;
+            ">
+              <div style="
+                font-size:12px;
+                text-transform:uppercase;
+                letter-spacing:1px;
+                color:#9aa2b1;
+                margin-bottom:8px;
+              ">
+                Projekted
+              </div>
+
+              <div style="
+                font-size:14px;
+                line-height:1.6;
+                color:#394256;
+              ">
+                ${project}
+              </div>
+            </div>
+
+            <p style="
+              margin:0;
+              font-size:15px;
+              line-height:1.7;
+              color:#5f6878;
+            ">
               Üdvözlettel,<br>
-              <strong>Kiss Ádám</strong><br>
-              NETGARY
+              <strong style="color:#283654;">Kiss Ádám</strong><br>
+              <span style="color:#8a93a5;">
+                A NETGARY fejlesztője és tulajdonosa
+              </span>
             </p>
           </div>
-        `
-        : `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #283654;">
-            <h2>Hi ${name}!</h2>
 
-            <p>
+          <div style="
+            padding:20px 32px;
+            border-top:1px solid #eceef2;
+            background:#fbfbfc;
+            font-size:12px;
+            color:#9aa2b1;
+          ">
+            NETGARY · Webfejlesztés · Design · Digitális megoldások
+          </div>
+        </div>
+      </div>
+    `
+        : `
+      <div style="
+        margin:0;
+        padding:40px 20px;
+        background:#f5f6f8;
+        font-family:Arial,Helvetica,sans-serif;
+      ">
+        <div style="
+          max-width:620px;
+          margin:0 auto;
+          background:#ffffff;
+          border:1px solid #e7e9ee;
+          border-radius:18px;
+          overflow:hidden;
+        ">
+
+          <div style="
+            padding:28px 32px;
+            border-bottom:1px solid #eceef2;
+          ">
+            <div style="
+              font-size:26px;
+              font-weight:700;
+              color:#283654;
+              letter-spacing:-0.5px;
+            ">
+              NETGARY
+            </div>
+
+            <div style="
+              margin-top:4px;
+              font-size:13px;
+              color:#8a93a5;
+            ">
+              the web partner
+            </div>
+          </div>
+
+          <div style="padding:36px 32px;">
+            <div style="
+              display:inline-block;
+              padding:7px 12px;
+              border-radius:999px;
+              background:#eef8f2;
+              color:#2f7d4f;
+              font-size:12px;
+              font-weight:600;
+              margin-bottom:24px;
+            ">
+              ✓ Request received
+            </div>
+
+            <h1 style="
+              margin:0 0 16px;
+              font-size:30px;
+              line-height:1.15;
+              color:#283654;
+            ">
+              Hi ${name}!
+            </h1>
+
+            <p style="
+              margin:0 0 16px;
+              font-size:16px;
+              line-height:1.7;
+              color:#5f6878;
+            ">
               Thank you for getting in touch.
             </p>
 
-            <p>
+            <p style="
+              margin:0 0 28px;
+              font-size:16px;
+              line-height:1.7;
+              color:#5f6878;
+            ">
               I've received your quote request and will review the project details.
               I'll get back to you shortly at the email address you provided.
             </p>
 
-            <p>
+            <div style="
+              padding:18px 20px;
+              background:#f7f8fa;
+              border:1px solid #eceef2;
+              border-radius:14px;
+              margin-bottom:30px;
+            ">
+              <div style="
+                font-size:12px;
+                text-transform:uppercase;
+                letter-spacing:1px;
+                color:#9aa2b1;
+                margin-bottom:8px;
+              ">
+                Your project
+              </div>
+
+              <div style="
+                font-size:14px;
+                line-height:1.6;
+                color:#394256;
+              ">
+                ${project}
+              </div>
+            </div>
+
+            <p style="
+              margin:0;
+              font-size:15px;
+              line-height:1.7;
+              color:#5f6878;
+            ">
               Best regards,<br>
-              <strong>Ádám Kiss</strong><br>
-              NETGARY
+              <strong style="color:#283654;">Ádám Kiss</strong><br>
+              <span style="color:#8a93a5;">
+                Developer & Owner of NETGARY
+              </span>
             </p>
           </div>
-        `,
+
+          <div style="
+            padding:20px 32px;
+            border-top:1px solid #eceef2;
+            background:#fbfbfc;
+            font-size:12px;
+            color:#9aa2b1;
+          ">
+            NETGARY · Web Development · Design · Digital Products
+          </div>
+        </div>
+      </div>
+    `,
     });
 
     return res.status(200).json({
