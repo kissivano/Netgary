@@ -1,44 +1,92 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 function Header({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-border bg-white/95 backdrop-blur-md">
+    <header
+      className={`fixed top-0 left-0 z-50 w-full border-b backdrop-blur-md transition-all duration-500 ${
+        scrolled
+          ? "border-white/10 bg-brand/95 shadow-[0_8px_30px_rgba(40,54,84,0.12)]"
+          : "border-border bg-white/95"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:h-20 lg:px-8">
         {/* LOGO */}
         <a
           href="#home"
           onClick={closeMenu}
-          className="font-heading text-2xl font-bold tracking-tight text-brand"
+          className={`font-heading text-2xl font-bold tracking-tight transition-colors duration-500 ${
+            scrolled ? "text-white" : "text-brand"
+          }`}
         >
           NETGARY
         </a>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           <a
             href="#about"
-            className="text-sm font-medium text-zinc-500 transition duration-300 hover:text-brand"
+            className={`text-sm font-medium transition duration-300 ${
+              scrolled
+                ? "text-white/65 hover:text-white"
+                : "text-zinc-500 hover:text-brand"
+            }`}
           >
             {t.nav.about}
           </a>
 
           <a
             href="#services"
-            className="text-sm font-medium text-zinc-500 transition duration-300 hover:text-brand"
+            className={`text-sm font-medium transition duration-300 ${
+              scrolled
+                ? "text-white/65 hover:text-white"
+                : "text-zinc-500 hover:text-brand"
+            }`}
           >
             {t.nav.services}
           </a>
 
           <a
+            href="#google-ads"
+            className={`text-sm font-medium transition duration-300 ${
+              scrolled
+                ? "text-white/65 hover:text-white"
+                : "text-zinc-500 hover:text-brand"
+            }`}
+          >
+            {t.nav.googleAds}
+          </a>
+
+          <a
             href="#contact"
-            className="text-sm font-medium text-zinc-500 transition duration-300 hover:text-brand"
+            className={`text-sm font-medium transition duration-300 ${
+              scrolled
+                ? "text-white/65 hover:text-white"
+                : "text-zinc-500 hover:text-brand"
+            }`}
           >
             {t.nav.contact}
           </a>
@@ -52,23 +100,33 @@ function Header({ language, setLanguage, t }) {
               type="button"
               onClick={() => setLanguage("hu")}
               className={`transition duration-300 ${
-                language === "hu"
-                  ? "text-brand"
-                  : "text-zinc-300 hover:text-brand"
+                scrolled
+                  ? language === "hu"
+                    ? "text-white"
+                    : "text-white/35 hover:text-white"
+                  : language === "hu"
+                    ? "text-brand"
+                    : "text-zinc-300 hover:text-brand"
               }`}
             >
               HU
             </button>
 
-            <span className="text-zinc-300">/</span>
+            <span className={scrolled ? "text-white/25" : "text-zinc-300"}>
+              /
+            </span>
 
             <button
               type="button"
               onClick={() => setLanguage("en")}
               className={`transition duration-300 ${
-                language === "en"
-                  ? "text-brand"
-                  : "text-zinc-300 hover:text-brand"
+                scrolled
+                  ? language === "en"
+                    ? "text-white"
+                    : "text-white/35 hover:text-white"
+                  : language === "en"
+                    ? "text-brand"
+                    : "text-zinc-300 hover:text-brand"
               }`}
             >
               EN
@@ -79,7 +137,11 @@ function Header({ language, setLanguage, t }) {
           <a
             href="#contact"
             onClick={closeMenu}
-            className="inline-flex items-center gap-2 rounded-full border border-brand px-4 py-2 text-xs font-medium text-brand transition duration-300 hover:bg-brand hover:text-white sm:text-sm md:px-5 md:py-2.5"
+            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition duration-300 sm:text-sm md:px-5 md:py-2.5 ${
+              scrolled
+                ? "border-white/60 text-white hover:bg-white hover:text-brand"
+                : "border-brand text-brand hover:bg-brand hover:text-white"
+            }`}
           >
             {t.nav.letsTalk}
 
@@ -95,21 +157,21 @@ function Header({ language, setLanguage, t }) {
             className="relative flex h-6 w-7 flex-col justify-center gap-[5px] md:hidden"
           >
             <span
-              className={`block h-[1.5px] w-7 bg-brand transition-all duration-300 ${
-                menuOpen ? "translate-y-[6.5px] rotate-45" : ""
-              }`}
+              className={`block h-[1.5px] w-7 transition-all duration-300 ${
+                scrolled ? "bg-white" : "bg-brand"
+              } ${menuOpen ? "translate-y-[6.5px] rotate-45" : ""}`}
             />
 
             <span
-              className={`block h-[1.5px] w-7 bg-brand transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
+              className={`block h-[1.5px] w-7 transition-all duration-300 ${
+                scrolled ? "bg-white" : "bg-brand"
+              } ${menuOpen ? "opacity-0" : ""}`}
             />
 
             <span
-              className={`block h-[1.5px] w-7 bg-brand transition-all duration-300 ${
-                menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""
-              }`}
+              className={`block h-[1.5px] w-7 transition-all duration-300 ${
+                scrolled ? "bg-white" : "bg-brand"
+              } ${menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""}`}
             />
           </button>
         </div>
@@ -117,62 +179,70 @@ function Header({ language, setLanguage, t }) {
 
       {/* MOBILE MENU */}
       <div
-        className={`overflow-hidden bg-white transition-all duration-500 ease-in-out md:hidden ${
-          menuOpen
-            ? "max-h-[360px] border-t border-border opacity-100"
-            : "max-h-0 border-t border-transparent opacity-0"
+        className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
+          menuOpen ? "max-h-[440px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="px-6 py-4">
-          <a
-            href="#about"
-            onClick={closeMenu}
-            className="block border-b border-border py-4 font-heading text-xl font-medium text-brand"
-          >
-            {t.nav.about}
-          </a>
-
-          <a
-            href="#services"
-            onClick={closeMenu}
-            className="block border-b border-border py-4 font-heading text-xl font-medium text-brand"
-          >
-            {t.nav.services}
-          </a>
-
-          <a
-            href="#contact"
-            onClick={closeMenu}
-            className="block border-b border-border py-4 font-heading text-xl font-medium text-brand"
-          >
-            {t.nav.contact}
-          </a>
-
-          {/* MOBILE LANGUAGE */}
-          <div className="flex items-center gap-3 pt-5 text-sm font-medium">
-            <button
-              type="button"
-              onClick={() => setLanguage("hu")}
-              className={`transition duration-300 ${
-                language === "hu" ? "text-brand" : "text-zinc-300"
-              }`}
+        <div className="border-t border-white/10 bg-[#22304b] shadow-[0_20px_35px_rgba(15,23,42,0.18)]">
+          <nav className="px-6 py-5">
+            <a
+              href="#about"
+              onClick={closeMenu}
+              className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
-              HU
-            </button>
+              {t.nav.about}
+            </a>
 
-            <span className="text-zinc-300">/</span>
-
-            <button
-              type="button"
-              onClick={() => setLanguage("en")}
-              className={`transition duration-300 ${
-                language === "en" ? "text-brand" : "text-zinc-300"
-              }`}
+            <a
+              href="#services"
+              onClick={closeMenu}
+              className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
-              EN
-            </button>
-          </div>
-        </nav>
+              {t.nav.services}
+            </a>
+
+            <a
+              href="#google-ads"
+              onClick={closeMenu}
+              className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
+            >
+              {t.nav.googleAds}
+            </a>
+
+            <a
+              href="#contact"
+              onClick={closeMenu}
+              className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
+            >
+              {t.nav.contact}
+            </a>
+
+            {/* MOBILE LANGUAGE */}
+            <div className="flex items-center gap-3 pt-5 text-sm font-medium">
+              <button
+                type="button"
+                onClick={() => setLanguage("hu")}
+                className={`transition duration-300 ${
+                  language === "hu" ? "text-white" : "text-white/35"
+                }`}
+              >
+                HU
+              </button>
+
+              <span className="text-white/25">/</span>
+
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={`transition duration-300 ${
+                  language === "en" ? "text-white" : "text-white/35"
+                }`}
+              >
+                EN
+              </button>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );

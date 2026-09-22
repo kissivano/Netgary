@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       about: "Rólunk",
       services: "Szolgáltatások",
+      googleAds: "Google hirdetések",
       contact: "Kapcsolat",
       letsTalk: "Beszéljünk",
     },
@@ -154,6 +155,7 @@ export const translations = {
     nav: {
       about: "About",
       services: "Services",
+      googleAds: "Google Ads",
       contact: "Contact",
       letsTalk: "Let's talk",
     },

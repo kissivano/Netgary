@@ -1,126 +1,264 @@
+import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const codeLines = [
+const token = (text, className = "text-zinc-700") => ({
+  text,
+  className,
+});
+
+const getCodeLines = (variant) => [
   {
     number: "01",
-    code: (
-      <>
-        <span className="text-[#c678dd]">import</span>{" "}
-        <span className="text-zinc-700">{"{"}</span>{" "}
-        <span className="text-[#61afef]">useState</span>{" "}
-        <span className="text-zinc-700">{"}"}</span>{" "}
-        <span className="text-[#c678dd]">from</span>{" "}
-        <span className="text-[#98c379]">'react'</span>;
-      </>
-    ),
+    tokens: [
+      token("import", "text-[#c678dd]"),
+      token(" "),
+      token("{"),
+      token(" "),
+      token("useState", "text-[#61afef]"),
+      token(" "),
+      token("}"),
+      token(" "),
+      token("from", "text-[#c678dd]"),
+      token(" "),
+      token("'react'", "text-[#98c379]"),
+      token(";"),
+    ],
   },
+
   {
     number: "02",
-    code: "",
+    tokens: [],
   },
+
   {
     number: "03",
-    code: (
-      <>
-        <span className="text-[#c678dd]">function</span>{" "}
-        <span className="text-[#61afef]">Website</span>
-        <span className="text-zinc-700">()</span> {"{"}
-      </>
-    ),
+    tokens: [
+      token("function", "text-[#c678dd]"),
+      token(" "),
+      token("Website", "text-[#61afef]"),
+      token("() "),
+      token("{"),
+    ],
   },
+
   {
     number: "04",
-    code: (
-      <>
-        &nbsp;&nbsp;
-        <span className="text-[#c678dd]">const</span>{" "}
-        <span className="text-zinc-700">[</span>
-        <span className="text-[#e5c07b]">ideas</span>
-        <span className="text-zinc-700">, </span>
-        <span className="text-[#e5c07b]">setIdeas</span>
-        <span className="text-zinc-700">]</span>{" "}
-        <span className="text-[#56b6c2]">=</span>{" "}
-        <span className="text-[#e5c07b]">useState</span>
-        <span className="text-zinc-700">([]);</span>
-      </>
-    ),
+    tokens: [
+      token("  "),
+      token("const", "text-[#c678dd]"),
+      token(" "),
+      token("["),
+      token("ideas", "text-[#e5c07b]"),
+      token(", "),
+      token("setIdeas", "text-[#e5c07b]"),
+      token("]"),
+      token(" "),
+      token("=", "text-[#56b6c2]"),
+      token(" "),
+      token("useState", "text-[#e5c07b]"),
+      token("([]);"),
+    ],
   },
+
   {
     number: "05",
-    code: "",
+    tokens: [],
   },
+
   {
     number: "06",
-    code: (
-      <>
-        &nbsp;&nbsp;
-        <span className="text-[#c678dd]">return</span> (
-      </>
-    ),
+    tokens: [token("  "), token("return", "text-[#c678dd]"), token(" (")],
   },
+
   {
     number: "07",
-    code: (
-      <>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <span className="text-zinc-500">&lt;</span>
-        <span className="text-[#e06c75]">main</span>
-        <span className="text-zinc-500">&gt;</span>
-      </>
-    ),
+    tokens: [
+      token("    "),
+      token("<", "text-zinc-500"),
+      token("main", "text-[#e06c75]"),
+      token(">", "text-zinc-500"),
+    ],
   },
+
   {
     number: "08",
-    code: (
-      <>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span className="text-zinc-500">&lt;</span>
-        <span className="text-[#e06c75]">h1</span>
-        <span className="text-zinc-500">&gt;</span>
-        <span className="text-zinc-800">Build something better.</span>
-        <span className="text-zinc-500">&lt;/</span>
-        <span className="text-[#e06c75]">h1</span>
-        <span className="text-zinc-500">&gt;</span>
-      </>
-    ),
+    tokens: [
+      token("      "),
+      token("<", "text-zinc-500"),
+      token("h1", "text-[#e06c75]"),
+      token(">", "text-zinc-500"),
+      token(
+        variant === 0
+          ? "Build something better."
+          : variant === 1
+            ? "Turn ideas into reality."
+            : "Design. Build. Grow.",
+        "text-zinc-800",
+      ),
+      token("</", "text-zinc-500"),
+      token("h1", "text-[#e06c75]"),
+      token(">", "text-zinc-500"),
+    ],
   },
+
   {
     number: "09",
-    code: (
-      <>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span className="text-zinc-500">&lt;</span>
-        <span className="text-[#e06c75]">p</span>
-        <span className="text-zinc-500">&gt;</span>
-        <span className="text-zinc-800">Your idea. Our code.</span>
-        <span className="text-zinc-500">&lt;/</span>
-        <span className="text-[#e06c75]">p</span>
-        <span className="text-zinc-500">&gt;</span>
-      </>
-    ),
+    tokens: [
+      token("      "),
+      token("<", "text-zinc-500"),
+      token("p", "text-[#e06c75]"),
+      token(">", "text-zinc-500"),
+      token(
+        variant === 0
+          ? "Your idea. Our code."
+          : variant === 1
+            ? "Built for the modern web."
+            : "Fast. Clean. Scalable.",
+        "text-zinc-800",
+      ),
+      token("</", "text-zinc-500"),
+      token("p", "text-[#e06c75]"),
+      token(">", "text-zinc-500"),
+    ],
   },
+
   {
     number: "10",
-    code: (
-      <>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <span className="text-zinc-500">&lt;/</span>
-        <span className="text-[#e06c75]">main</span>
-        <span className="text-zinc-500">&gt;</span>
-      </>
-    ),
+    tokens: [
+      token("    "),
+      token("</", "text-zinc-500"),
+      token("main", "text-[#e06c75]"),
+      token(">", "text-zinc-500"),
+    ],
   },
+
   {
     number: "11",
-    code: <>&nbsp;&nbsp;);</>,
+    tokens: [token("  );")],
   },
+
   {
     number: "12",
-    code: "}",
+    tokens: [token("}")],
   },
 ];
 
+const getLineLength = (line) =>
+  line.tokens.reduce((total, item) => total + item.text.length, 0);
+
+const getTotalLength = (lines) =>
+  lines.reduce((total, line) => total + getLineLength(line), 0);
+
+const getPrefixLength = (lines, amount) =>
+  lines
+    .slice(0, amount)
+    .reduce((total, line) => total + getLineLength(line), 0);
+
+function VisibleTokens({ tokens, visibleCharacters }) {
+  let remaining = visibleCharacters;
+
+  return tokens.map((item, index) => {
+    if (remaining <= 0) {
+      return null;
+    }
+
+    const visibleText = item.text.slice(0, remaining);
+
+    remaining -= item.text.length;
+
+    return (
+      <span key={index} className={item.className}>
+        {visibleText}
+      </span>
+    );
+  });
+}
+
 function Hero({ t }) {
+  const [variant, setVariant] = useState(0);
+  const [visibleCharacters, setVisibleCharacters] = useState(0);
+  const [mode, setMode] = useState("typing");
+
+  const codeLines = useMemo(() => getCodeLines(variant), [variant]);
+
+  const totalLength = useMemo(() => getTotalLength(codeLines), [codeLines]);
+
+  // Everything through line 7 stays on screen.
+  // Only the lower part is edited after the first animation.
+  const editPoint = useMemo(() => getPrefixLength(codeLines, 7), [codeLines]);
+
+  useEffect(() => {
+    let timeout;
+
+    if (mode === "typing") {
+      if (visibleCharacters < totalLength) {
+        const typingDelay = 24 + ((visibleCharacters * 13) % 34);
+
+        timeout = setTimeout(() => {
+          setVisibleCharacters((current) => Math.min(current + 1, totalLength));
+        }, typingDelay);
+      } else {
+        timeout = setTimeout(() => {
+          setMode("deleting");
+        }, 1400);
+      }
+    }
+
+    if (mode === "deleting") {
+      if (visibleCharacters > editPoint) {
+        const deleteDelay = 12 + ((visibleCharacters * 7) % 15);
+
+        timeout = setTimeout(() => {
+          setVisibleCharacters((current) => Math.max(current - 1, editPoint));
+        }, deleteDelay);
+      } else {
+        timeout = setTimeout(() => {
+          setVariant((current) => (current + 1) % 3);
+          setMode("typing");
+        }, 450);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [mode, visibleCharacters, totalLength, editPoint]);
+
+  const lineData = useMemo(() => {
+    let usedCharacters = 0;
+
+    return codeLines.map((line) => {
+      const length = getLineLength(line);
+
+      const visibleOnLine = Math.max(
+        0,
+        Math.min(length, visibleCharacters - usedCharacters),
+      );
+
+      const lineStart = usedCharacters;
+      const lineEnd = usedCharacters + length;
+
+      usedCharacters += length;
+
+      return {
+        ...line,
+        length,
+        visibleOnLine,
+        lineStart,
+        lineEnd,
+      };
+    });
+  }, [codeLines, visibleCharacters]);
+
+  let activeLineIndex = 0;
+
+  for (let i = 0; i < lineData.length; i += 1) {
+    if (visibleCharacters <= lineData[i].lineEnd) {
+      activeLineIndex = i;
+      break;
+    }
+
+    activeLineIndex = i;
+  }
+
   return (
     <section
       id="home"
@@ -194,25 +332,24 @@ function Hero({ t }) {
             {/* CODE */}
             <div className="relative min-h-[520px] overflow-hidden px-4 py-8 sm:px-7">
               <div className="font-mono text-[12px] leading-7 sm:text-[13px]">
-                {codeLines.map((line) => (
-                  <div key={line.number} className="flex">
-                    <span className="mr-5 w-5 select-none text-right text-zinc-300">
+                {lineData.map((line, index) => (
+                  <div key={line.number} className="flex min-h-7">
+                    <span className="mr-5 w-5 shrink-0 select-none text-right text-zinc-300">
                       {line.number}
                     </span>
 
-                    <span className="whitespace-nowrap">{line.code}</span>
+                    <span className="whitespace-pre">
+                      <VisibleTokens
+                        tokens={line.tokens}
+                        visibleCharacters={line.visibleOnLine}
+                      />
+
+                      {index === activeLineIndex && (
+                        <span className="ml-[1px] inline-block h-[18px] w-[1.5px] translate-y-[4px] animate-pulse bg-brand" />
+                      )}
+                    </span>
                   </div>
                 ))}
-
-                <div className="flex">
-                  <span className="mr-5 w-5 select-none text-right text-zinc-300">
-                    13
-                  </span>
-
-                  <span className="inline-flex items-center">
-                    <span className="h-[18px] w-[1.5px] animate-pulse bg-brand" />
-                  </span>
-                </div>
               </div>
 
               {/* SMOOTH WHITE FADE */}
