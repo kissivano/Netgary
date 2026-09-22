@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 
 import QuotePage from "./pages/QuotePage";
 import GoogleAdsPage from "./pages/GoogleAdsPage";
+import ReviewsPage from "./pages/ReviewsPage";
 
 function HomePage({ language, setLanguage, t }) {
   return (
@@ -59,6 +60,11 @@ function App() {
         element={
           <GoogleAdsPage language={language} setLanguage={setLanguage} />
         }
+      />
+
+      <Route
+        path="/visszajelzesek"
+        element={<ReviewsPage language={language} setLanguage={setLanguage} />}
       />
     </Routes>
   );

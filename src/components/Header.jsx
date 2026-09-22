@@ -47,7 +47,7 @@ function Header({ language, setLanguage, t }) {
         </a>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           <a
             href="#about"
             className={`text-sm font-medium transition duration-300 ${
@@ -80,6 +80,18 @@ function Header({ language, setLanguage, t }) {
             }`}
           >
             {t.nav.googleAds}
+          </Link>
+
+          <Link
+            to="/visszajelzesek"
+            onClick={closeMenu}
+            className={`text-sm font-medium transition duration-300 ${
+              scrolled
+                ? "text-white/65 hover:text-white"
+                : "text-zinc-500 hover:text-brand"
+            }`}
+          >
+            {t.nav.reviews}
           </Link>
 
           <a
@@ -182,7 +194,7 @@ function Header({ language, setLanguage, t }) {
       {/* MOBILE MENU */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
-          menuOpen ? "max-h-[460px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[540px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="border-t border-white/10 bg-[#22304b] shadow-[0_20px_35px_rgba(15,23,42,0.18)]">
@@ -209,6 +221,14 @@ function Header({ language, setLanguage, t }) {
               className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
               {t.nav.googleAds}
+            </Link>
+
+            <Link
+              to="/visszajelzesek"
+              onClick={closeMenu}
+              className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
+            >
+              {t.nav.reviews}
             </Link>
 
             <a
