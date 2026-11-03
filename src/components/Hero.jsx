@@ -371,7 +371,7 @@ function Hero({ t }) {
           </div>
 
           {/* MOBILE CODE WINDOW */}
-          <div className="pointer-events-none absolute top-[calc(100%+22px)] left-1/2 z-0 block w-[92vw] max-w-[500px] -translate-x-1/2 rotate-[1deg] lg:hidden">
+          <div className="pointer-events-none absolute top-[calc(100%+22px)] left-1/2 z-0 block w-[92vw] max-w-[500px] -translate-x-1/2 lg:hidden">
             <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.12)]">
               {/* TOP BAR */}
               <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
@@ -415,8 +415,11 @@ function Hero({ t }) {
                   ))}
                 </div>
 
-                {/* LIGHT BOTTOM FADE */}
-                <div className="absolute inset-x-0 bottom-0 h-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.6)_100%)]" />
+                {/* OVERLAY */}
+                <div className="absolute inset-0 bg-white/12 backdrop-blur-[0.6px]" />
+
+                {/* BOTTOM FADE */}
+                <div className="absolute inset-x-0 bottom-0 h-12 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.7)_100%)]" />
               </div>
             </div>
           </div>
