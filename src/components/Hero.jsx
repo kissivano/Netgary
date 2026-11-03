@@ -351,8 +351,11 @@ function Hero({ t }) {
             {t.hero.description}
           </p>
 
+          {/* MOBILE STRONG WHITE FADE BEHIND CTA */}
+          <div className="pointer-events-none absolute right-[-40px] bottom-[-70px] left-[-40px] z-20 h-[190px] bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.72)_24%,rgba(255,255,255,0.96)_48%,#ffffff_68%,#ffffff_100%)] blur-[2px] lg:hidden" />
+
           {/* CTA */}
-          <div className="relative z-30 mt-8 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-white/80 bg-white/90 p-2 shadow-[0_18px_50px_rgba(40,54,84,0.08)] backdrop-blur-xl">
+          <div className="relative z-30 mt-8 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-white/95 bg-white/95 p-2 backdrop-blur-xl lg:shadow-[0_18px_50px_rgba(40,54,84,0.08)]">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-[15px] bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.18)]"
@@ -372,7 +375,7 @@ function Hero({ t }) {
 
           {/* MOBILE CODE WINDOW */}
           <div className="pointer-events-none absolute top-[calc(100%-8px)] left-1/2 z-10 block w-[92vw] max-w-[500px] -translate-x-1/2 lg:hidden">
-            <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.12)]">
+            <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.1)]">
               {/* TOP BAR */}
               <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
                 <div className="flex items-center gap-1.5">
@@ -415,15 +418,13 @@ function Hero({ t }) {
                   ))}
                 </div>
 
-                {/* SUBTLE CODE SOFTENING */}
                 <div className="absolute inset-0 bg-white/[0.06]" />
 
-                {/* BOTTOM FADE */}
                 <div className="absolute inset-x-0 bottom-0 h-12 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.65)_100%)]" />
               </div>
 
-              {/* TOP WHITE GRADIENT OVERLAY */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-[150px] bg-[linear-gradient(to_bottom,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.9)_18%,rgba(255,255,255,0.7)_38%,rgba(255,255,255,0.4)_60%,rgba(255,255,255,0.14)_80%,rgba(255,255,255,0)_100%)]" />
+              {/* TOP GRADIENT */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-[155px] bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.97)_16%,rgba(255,255,255,0.82)_34%,rgba(255,255,255,0.56)_54%,rgba(255,255,255,0.24)_76%,rgba(255,255,255,0)_100%)]" />
             </div>
           </div>
         </div>
