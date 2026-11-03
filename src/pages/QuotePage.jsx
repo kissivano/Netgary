@@ -77,14 +77,14 @@ function QuotePage({ language, setLanguage, t }) {
             <div className="flex items-center gap-2 text-xs font-medium">
               <button
                 type="button"
-                onClick={() => setLanguage("hu")}
+                onClick={() => setLanguage("de")}
                 className={`transition duration-300 ${
-                  language === "hu"
+                  language === "de"
                     ? "text-brand"
                     : "text-zinc-300 hover:text-brand"
                 }`}
               >
-                HU
+                DE
               </button>
 
               <span className="text-zinc-300">/</span>
@@ -108,6 +108,7 @@ function QuotePage({ language, setLanguage, t }) {
               className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition duration-300 hover:text-brand"
             >
               <ArrowLeft size={16} strokeWidth={1.8} />
+
               {t.quote.back}
             </Link>
           </div>
@@ -200,7 +201,9 @@ function QuotePage({ language, setLanguage, t }) {
               <option value="">{t.quote.form.sourcePlaceholder}</option>
 
               <option value="instagram">Instagram</option>
+
               <option value="facebook">Facebook</option>
+
               <option value="google">Google</option>
 
               <option value="recommendation">
