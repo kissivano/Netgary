@@ -320,7 +320,7 @@ function Hero({ t }) {
       </div>
 
       {/* HERO CONTENT */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-[235px] lg:flex lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-[205px] lg:flex lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
         <div className="relative max-w-3xl">
           {/* STATUS */}
           <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand/10 bg-white/85 px-4 py-2 backdrop-blur-md">
@@ -351,11 +351,49 @@ function Hero({ t }) {
             {t.hero.description}
           </p>
 
-          {/* MOBILE STRONG WHITE FADE BEHIND CTA */}
-          <div className="pointer-events-none absolute right-[-40px] bottom-[-70px] left-[-40px] z-20 h-[190px] bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.72)_24%,rgba(255,255,255,0.96)_48%,#ffffff_68%,#ffffff_100%)] blur-[2px] lg:hidden" />
+          {/* MOBILE CODE BACKGROUND */}
+          <div className="pointer-events-none absolute top-[calc(100%-30px)] left-1/2 z-0 block w-[100vw] -translate-x-1/2 overflow-hidden lg:hidden">
+            <div className="relative mx-auto h-[260px] w-full max-w-[620px] overflow-hidden">
+              {/* RAW CODE */}
+              <div className="absolute top-8 left-1/2 w-[520px] -translate-x-1/2 px-8 font-mono text-[10px] leading-[20px] opacity-[0.42]">
+                {lineData.map((line, index) => (
+                  <div
+                    key={`mobile-${line.number}`}
+                    className="flex min-h-[20px]"
+                  >
+                    <span className="mr-4 w-5 shrink-0 select-none text-right text-zinc-300">
+                      {line.number}
+                    </span>
+
+                    <span className="whitespace-pre">
+                      <VisibleTokens
+                        tokens={line.tokens}
+                        visibleCharacters={line.visibleOnLine}
+                      />
+
+                      {index === activeLineIndex && (
+                        <span className="ml-[1px] inline-block h-[13px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
+                      )}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* STRONG WHITE FADE FROM TOP */}
+              <div className="absolute inset-x-0 top-0 z-10 h-[145px] bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_18%,rgba(255,255,255,0.88)_38%,rgba(255,255,255,0.58)_62%,rgba(255,255,255,0.18)_84%,rgba(255,255,255,0)_100%)]" />
+
+              {/* SOFT SIDE FADES */}
+              <div className="absolute inset-y-0 left-0 z-10 w-16 bg-[linear-gradient(to_right,#ffffff_0%,rgba(255,255,255,0)_100%)]" />
+
+              <div className="absolute inset-y-0 right-0 z-10 w-16 bg-[linear-gradient(to_left,#ffffff_0%,rgba(255,255,255,0)_100%)]" />
+
+              {/* BOTTOM FADE */}
+              <div className="absolute inset-x-0 bottom-0 z-10 h-16 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,#ffffff_100%)]" />
+            </div>
+          </div>
 
           {/* CTA */}
-          <div className="relative z-30 mt-8 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-white/95 bg-white/95 p-2 backdrop-blur-xl lg:shadow-[0_18px_50px_rgba(40,54,84,0.08)]">
+          <div className="relative z-20 mt-8 flex flex-wrap items-center gap-3 lg:inline-flex lg:rounded-[20px] lg:border lg:border-white/80 lg:bg-white/90 lg:p-2 lg:shadow-[0_18px_50px_rgba(40,54,84,0.08)] lg:backdrop-blur-xl">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-[15px] bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.18)]"
@@ -367,71 +405,16 @@ function Hero({ t }) {
 
             <a
               href="#services"
-              className="rounded-[15px] px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:bg-brand/[0.05]"
+              className="rounded-[15px] border border-border bg-white px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:border-brand lg:border-0 lg:bg-transparent"
             >
               {t.hero.secondaryButton}
             </a>
           </div>
-
-          {/* MOBILE CODE WINDOW */}
-          <div className="pointer-events-none absolute top-[calc(100%-8px)] left-1/2 z-10 block w-[92vw] max-w-[500px] -translate-x-1/2 lg:hidden">
-            <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.1)]">
-              {/* TOP BAR */}
-              <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-[#ff605c]" />
-                  <span className="h-2 w-2 rounded-full bg-[#ffbd44]" />
-                  <span className="h-2 w-2 rounded-full bg-[#00ca4e]" />
-                </div>
-
-                <div className="flex items-center gap-2 text-[10px] text-zinc-400">
-                  <span className="text-[#61dafb]">⚛</span>
-                  Hero.jsx
-                </div>
-
-                <div className="w-10" />
-              </div>
-
-              {/* CODE */}
-              <div className="relative h-[260px] overflow-hidden px-5 py-5">
-                <div className="font-mono text-[10px] leading-[20px]">
-                  {lineData.map((line, index) => (
-                    <div
-                      key={`mobile-${line.number}`}
-                      className="flex min-h-[20px]"
-                    >
-                      <span className="mr-4 w-5 shrink-0 select-none text-right text-zinc-300">
-                        {line.number}
-                      </span>
-
-                      <span className="whitespace-pre">
-                        <VisibleTokens
-                          tokens={line.tokens}
-                          visibleCharacters={line.visibleOnLine}
-                        />
-
-                        {index === activeLineIndex && (
-                          <span className="ml-[1px] inline-block h-[13px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
-                        )}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="absolute inset-0 bg-white/[0.06]" />
-
-                <div className="absolute inset-x-0 bottom-0 h-12 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.65)_100%)]" />
-              </div>
-
-              {/* TOP GRADIENT */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-[155px] bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.97)_16%,rgba(255,255,255,0.82)_34%,rgba(255,255,255,0.56)_54%,rgba(255,255,255,0.24)_76%,rgba(255,255,255,0)_100%)]" />
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* MOBILE HERO BOTTOM SOFTENING */}
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[15] h-14 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.65)_70%,#ffffff_100%)] lg:hidden" />
+      {/* MOBILE SECTION TRANSITION */}
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[5] h-20 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,#ffffff_100%)] lg:hidden" />
 
       {/* DESKTOP BOTTOM FADE */}
       <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] hidden h-28 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.45)_70%,#ffffff_100%)] lg:block" />
