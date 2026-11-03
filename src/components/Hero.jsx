@@ -258,7 +258,7 @@ function Hero({ t }) {
   return (
     <section
       id="home"
-      className="relative min-h-[820px] overflow-hidden border-b border-border bg-white pt-16 md:pt-20 lg:min-h-[900px]"
+      className="relative min-h-[700px] overflow-hidden border-b border-border bg-white pt-16 md:pt-20 lg:min-h-[900px]"
     >
       {/* AMBIENT LIGHT */}
       <div className="pointer-events-none absolute top-[70px] right-[-120px] h-[620px] w-[620px] rounded-full bg-brand/[0.07] blur-[100px]" />
@@ -320,10 +320,10 @@ function Hero({ t }) {
       </div>
 
       {/* MOBILE CODE WINDOW */}
-      <div className="pointer-events-none absolute top-[300px] right-[-70px] z-0 block w-[520px] rotate-[2deg] opacity-[0.62] lg:hidden">
-        <div className="relative overflow-hidden rounded-[26px] border border-[#e4e7ee] bg-white/90 shadow-[0_30px_100px_rgba(40,54,84,0.12)]">
+      <div className="pointer-events-none absolute top-[255px] right-[-35px] z-0 block w-[500px] rotate-[1.5deg] opacity-[0.82] lg:hidden">
+        <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white/92 shadow-[0_28px_90px_rgba(40,54,84,0.13)]">
           {/* TOP BAR */}
-          <div className="flex h-11 items-center justify-between border-b border-[#e8e8eb] px-4">
+          <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
             <div className="flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-[#ff605c]" />
               <span className="h-2 w-2 rounded-full bg-[#ffbd44]" />
@@ -339,12 +339,12 @@ function Hero({ t }) {
           </div>
 
           {/* CODE */}
-          <div className="relative min-h-[455px] overflow-hidden px-5 py-6">
-            <div className="font-mono text-[10.5px] leading-[23px]">
+          <div className="relative h-[380px] overflow-hidden px-5 py-5">
+            <div className="font-mono text-[10px] leading-[21px]">
               {lineData.map((line, index) => (
                 <div
                   key={`mobile-${line.number}`}
-                  className="flex min-h-[23px]"
+                  className="flex min-h-[21px]"
                 >
                   <span className="mr-4 w-5 shrink-0 text-right text-zinc-300">
                     {line.number}
@@ -357,28 +357,28 @@ function Hero({ t }) {
                     />
 
                     {index === activeLineIndex && (
-                      <span className="ml-[1px] inline-block h-[14px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
+                      <span className="ml-[1px] inline-block h-[13px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
                     )}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* LOWER FADE */}
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.25)_45%,rgba(255,255,255,0.9)_100%)]" />
+            {/* SOFTER FADE */}
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.12)_45%,rgba(255,255,255,0.72)_100%)]" />
           </div>
         </div>
       </div>
 
-      {/* MOBILE WHITE FADE */}
+      {/* MOBILE OVERLAY */}
       <div className="pointer-events-none absolute inset-0 z-[1] block lg:hidden">
-        <div className="absolute top-0 left-0 h-[400px] w-full bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_58%,rgba(255,255,255,0.75)_100%)]" />
+        <div className="absolute top-0 left-0 h-[315px] w-full bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_70%,rgba(255,255,255,0.7)_100%)]" />
 
-        <div className="absolute top-[390px] left-0 h-[360px] w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.82)_38%,rgba(255,255,255,0.42)_72%,rgba(255,255,255,0.16)_100%)]" />
+        <div className="absolute top-[300px] left-0 h-[300px] w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.68)_36%,rgba(255,255,255,0.25)_70%,rgba(255,255,255,0.06)_100%)]" />
       </div>
 
       {/* HERO CONTENT */}
-      <div className="relative z-10 mx-auto flex min-h-[760px] max-w-7xl items-start px-6 pt-16 pb-20 sm:pt-20 lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
+      <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-start px-6 pt-14 pb-8 sm:pt-20 sm:pb-12 lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
         <div className="max-w-3xl">
           {/* STATUS */}
           <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand/10 bg-white/80 px-4 py-2 backdrop-blur-md">
@@ -394,7 +394,7 @@ function Hero({ t }) {
           </div>
 
           {/* TITLE */}
-          <h1 className="max-w-4xl font-heading text-[58px] font-semibold leading-[0.91] tracking-[-0.052em] text-brand sm:text-[82px] lg:text-[104px]">
+          <h1 className="max-w-4xl font-heading text-[56px] font-semibold leading-[0.91] tracking-[-0.052em] text-brand sm:text-[82px] lg:text-[104px]">
             {t.hero.line1}
             <br />
             {t.hero.line2}
@@ -404,15 +404,15 @@ function Hero({ t }) {
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="mt-8 max-w-xl text-base leading-7 text-zinc-500 sm:text-lg">
+          <p className="mt-7 max-w-xl text-base leading-7 text-zinc-500 sm:text-lg">
             {t.hero.description}
           </p>
 
           {/* CTA PANEL */}
-          <div className="mt-10 inline-flex flex-wrap items-center gap-3 rounded-[22px] border border-white/70 bg-white/78 p-2 shadow-[0_20px_60px_rgba(40,54,84,0.08)] backdrop-blur-xl">
+          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-white/70 bg-white/74 p-2 shadow-[0_18px_50px_rgba(40,54,84,0.08)] backdrop-blur-xl">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-[16px] bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.18)]"
+              className="inline-flex items-center gap-2 rounded-[15px] bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.18)]"
             >
               {t.hero.primaryButton}
 
@@ -421,7 +421,7 @@ function Hero({ t }) {
 
             <a
               href="#services"
-              className="rounded-[16px] px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:bg-brand/[0.05]"
+              className="rounded-[15px] px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:bg-brand/[0.05]"
             >
               {t.hero.secondaryButton}
             </a>
@@ -429,8 +429,11 @@ function Hero({ t }) {
         </div>
       </div>
 
-      {/* BOTTOM FADE */}
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] h-28 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.45)_70%,#ffffff_100%)]" />
+      {/* MOBILE BOTTOM FADE */}
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] h-12 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,#ffffff_100%)] lg:hidden" />
+
+      {/* DESKTOP BOTTOM FADE */}
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] hidden h-28 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.45)_70%,#ffffff_100%)] lg:block" />
     </section>
   );
 }
