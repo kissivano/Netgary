@@ -24,12 +24,10 @@ const getCodeLines = (variant) => [
       token(";"),
     ],
   },
-
   {
     number: "02",
     tokens: [],
   },
-
   {
     number: "03",
     tokens: [
@@ -40,7 +38,6 @@ const getCodeLines = (variant) => [
       token("{"),
     ],
   },
-
   {
     number: "04",
     tokens: [
@@ -59,17 +56,14 @@ const getCodeLines = (variant) => [
       token("([]);"),
     ],
   },
-
   {
     number: "05",
     tokens: [],
   },
-
   {
     number: "06",
     tokens: [token("  "), token("return", "text-[#c678dd]"), token(" (")],
   },
-
   {
     number: "07",
     tokens: [
@@ -79,7 +73,6 @@ const getCodeLines = (variant) => [
       token(">", "text-zinc-500"),
     ],
   },
-
   {
     number: "08",
     tokens: [
@@ -100,7 +93,6 @@ const getCodeLines = (variant) => [
       token(">", "text-zinc-500"),
     ],
   },
-
   {
     number: "09",
     tokens: [
@@ -121,7 +113,6 @@ const getCodeLines = (variant) => [
       token(">", "text-zinc-500"),
     ],
   },
-
   {
     number: "10",
     tokens: [
@@ -131,12 +122,10 @@ const getCodeLines = (variant) => [
       token(">", "text-zinc-500"),
     ],
   },
-
   {
     number: "11",
     tokens: [token("  );")],
   },
-
   {
     number: "12",
     tokens: [token("}")],
@@ -258,11 +247,16 @@ function Hero({ t }) {
   return (
     <section
       id="home"
-      className="relative min-h-[760px] overflow-hidden border-b border-border bg-white pt-16 md:pt-20 lg:min-h-[860px]"
+      className="relative min-h-[780px] overflow-hidden border-b border-border bg-white pt-16 md:pt-20 lg:min-h-[900px]"
     >
-      {/* BACKGROUND CODE WINDOW */}
-      <div className="pointer-events-none absolute top-[140px] right-[-130px] z-0 hidden w-[760px] rotate-[2deg] lg:block">
-        <div className="relative overflow-hidden rounded-[28px] border border-[#e7e9ee] bg-[#fbfbfc]/90 shadow-[0_40px_120px_rgba(40,54,84,0.08)]">
+      {/* AMBIENT LIGHT */}
+      <div className="pointer-events-none absolute top-[70px] right-[-120px] h-[620px] w-[620px] rounded-full bg-brand/[0.07] blur-[100px]" />
+
+      <div className="pointer-events-none absolute top-[250px] right-[220px] h-[300px] w-[300px] rounded-full bg-[#8ca0d8]/10 blur-[90px]" />
+
+      {/* CODE WINDOW */}
+      <div className="pointer-events-none absolute top-[115px] right-[-135px] z-0 hidden w-[820px] rotate-[2.8deg] lg:block">
+        <div className="relative overflow-hidden rounded-[30px] border border-[#e4e7ee] bg-white/85 shadow-[0_45px_140px_rgba(40,54,84,0.12)] backdrop-blur-sm">
           {/* TOP BAR */}
           <div className="flex h-14 items-center justify-between border-b border-[#e8e8eb] px-5">
             <div className="flex items-center gap-2">
@@ -280,7 +274,7 @@ function Hero({ t }) {
           </div>
 
           {/* CODE */}
-          <div className="relative min-h-[560px] overflow-hidden px-7 py-8">
+          <div className="relative min-h-[590px] overflow-hidden px-8 py-9">
             <div className="font-mono text-[13px] leading-7">
               {lineData.map((line, index) => (
                 <div key={line.number} className="flex min-h-7">
@@ -303,22 +297,24 @@ function Hero({ t }) {
             </div>
           </div>
 
-          {/* INTERNAL FADE */}
-          <div className="absolute inset-x-0 bottom-0 h-72 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.15)_25%,rgba(255,255,255,0.55)_60%,rgba(255,255,255,0.94)_100%)]" />
+          {/* INTERNAL OVERLAY */}
+          <div className="absolute inset-0 bg-white/[0.08]" />
+
+          <div className="absolute inset-x-0 bottom-0 h-80 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.06)_18%,rgba(255,255,255,0.3)_45%,rgba(255,255,255,0.72)_72%,rgba(255,255,255,0.97)_100%)]" />
         </div>
       </div>
 
-      {/* BLUR + WHITE OVERLAY */}
+      {/* MAIN FADE */}
       <div className="pointer-events-none absolute inset-0 z-[1] hidden lg:block">
-        <div className="absolute top-0 right-0 h-full w-[58%] bg-white/30 backdrop-blur-[2px]" />
+        <div className="absolute inset-y-0 left-0 w-[58%] bg-[linear-gradient(to_right,#ffffff_0%,#ffffff_62%,rgba(255,255,255,0.92)_78%,rgba(255,255,255,0)_100%)]" />
 
-        <div className="absolute inset-y-0 left-[38%] w-[42%] bg-[linear-gradient(to_right,#ffffff_0%,rgba(255,255,255,0.96)_20%,rgba(255,255,255,0.78)_55%,rgba(255,255,255,0.22)_100%)]" />
+        <div className="absolute top-0 right-0 h-full w-[50%] bg-white/18 backdrop-blur-[1.5px]" />
       </div>
 
-      {/* MOBILE BACKGROUND CODE */}
-      <div className="pointer-events-none absolute right-[-160px] bottom-[-80px] z-0 block w-[560px] rotate-[3deg] opacity-35 blur-[0.5px] lg:hidden">
-        <div className="overflow-hidden rounded-[24px] border border-border bg-[#fbfbfc]">
-          <div className="h-[420px] px-6 py-8">
+      {/* MOBILE CODE */}
+      <div className="pointer-events-none absolute right-[-170px] bottom-[-65px] z-0 block w-[590px] rotate-[3deg] opacity-45 blur-[0.35px] lg:hidden">
+        <div className="overflow-hidden rounded-[26px] border border-border bg-white shadow-[0_30px_90px_rgba(40,54,84,0.08)]">
+          <div className="h-[450px] px-6 py-8">
             <div className="font-mono text-[11px] leading-6">
               {lineData.map((line, index) => (
                 <div key={`mobile-${line.number}`} className="flex min-h-6">
@@ -343,14 +339,14 @@ function Hero({ t }) {
         </div>
       </div>
 
-      {/* MOBILE WHITE OVERLAY */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_48%,rgba(255,255,255,0.82)_70%,rgba(255,255,255,0.62)_100%)] lg:hidden" />
+      {/* MOBILE FADE */}
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_45%,rgba(255,255,255,0.82)_68%,rgba(255,255,255,0.55)_100%)] lg:hidden" />
 
       {/* HERO CONTENT */}
-      <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl items-center px-6 py-16 sm:py-20 lg:min-h-[780px] lg:px-8 lg:py-24">
+      <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-6 py-16 sm:py-20 lg:min-h-[820px] lg:px-8 lg:py-24">
         <div className="max-w-3xl">
-          {/* AVAILABILITY */}
-          <div className="mb-7 flex items-center gap-3">
+          {/* STATUS */}
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand/10 bg-white/80 px-4 py-2 backdrop-blur-md">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
 
@@ -363,7 +359,7 @@ function Hero({ t }) {
           </div>
 
           {/* TITLE */}
-          <h1 className="max-w-4xl font-heading text-[58px] font-semibold leading-[0.92] tracking-[-0.05em] text-brand sm:text-[78px] lg:text-[98px]">
+          <h1 className="max-w-4xl font-heading text-[60px] font-semibold leading-[0.91] tracking-[-0.052em] text-brand sm:text-[82px] lg:text-[104px]">
             {t.hero.line1}
             <br />
             {t.hero.line2}
@@ -377,11 +373,11 @@ function Hero({ t }) {
             {t.hero.description}
           </p>
 
-          {/* CTA */}
-          <div className="relative mt-10 flex flex-wrap items-center gap-4">
+          {/* CTA PANEL */}
+          <div className="mt-10 inline-flex flex-wrap items-center gap-3 rounded-[22px] border border-white/70 bg-white/72 p-2 shadow-[0_20px_60px_rgba(40,54,84,0.08)] backdrop-blur-xl">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.16)]"
+              className="inline-flex items-center gap-2 rounded-[16px] bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.18)]"
             >
               {t.hero.primaryButton}
 
@@ -390,7 +386,7 @@ function Hero({ t }) {
 
             <a
               href="#services"
-              className="rounded-full border border-border bg-white/75 px-6 py-3.5 text-sm font-medium text-brand backdrop-blur-sm transition duration-300 hover:border-brand"
+              className="rounded-[16px] px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:bg-brand/[0.05]"
             >
               {t.hero.secondaryButton}
             </a>
@@ -398,8 +394,8 @@ function Hero({ t }) {
         </div>
       </div>
 
-      {/* BACKGROUND DETAIL */}
-      <div className="pointer-events-none absolute -top-32 -right-40 z-0 h-[520px] w-[520px] rounded-full bg-[#f4f6fa] blur-3xl" />
+      {/* BOTTOM FADE */}
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] h-40 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.55)_65%,#ffffff_100%)]" />
     </section>
   );
 }
