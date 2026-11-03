@@ -1,4 +1,4 @@
-\import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -114,13 +114,7 @@ function Header({ language, setLanguage, t }) {
               DE
             </button>
 
-            <span
-              className={
-                scrolled
-                  ? "text-white/25"
-                  : "text-zinc-300"
-              }
-            >
+            <span className={scrolled ? "text-white/25" : "text-zinc-300"}>
               /
             </span>
 
@@ -153,19 +147,13 @@ function Header({ language, setLanguage, t }) {
           >
             {t.nav.letsTalk}
 
-            <ArrowUpRight
-              size={15}
-              strokeWidth={1.8}
-              className="shrink-0"
-            />
+            <ArrowUpRight size={15} strokeWidth={1.8} className="shrink-0" />
           </a>
 
           {/* HAMBURGER */}
           <button
             type="button"
-            onClick={() =>
-              setMenuOpen((prev) => !prev)
-            }
+            onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             className="relative flex h-6 w-7 flex-col justify-center gap-[5px] md:hidden"
@@ -173,29 +161,19 @@ function Header({ language, setLanguage, t }) {
             <span
               className={`block h-[1.5px] w-7 transition-all duration-300 ${
                 scrolled ? "bg-white" : "bg-brand"
-              } ${
-                menuOpen
-                  ? "translate-y-[6.5px] rotate-45"
-                  : ""
-              }`}
+              } ${menuOpen ? "translate-y-[6.5px] rotate-45" : ""}`}
             />
 
             <span
               className={`block h-[1.5px] w-7 transition-all duration-300 ${
                 scrolled ? "bg-white" : "bg-brand"
-              } ${
-                menuOpen ? "opacity-0" : ""
-              }`}
+              } ${menuOpen ? "opacity-0" : ""}`}
             />
 
             <span
               className={`block h-[1.5px] w-7 transition-all duration-300 ${
                 scrolled ? "bg-white" : "bg-brand"
-              } ${
-                menuOpen
-                  ? "-translate-y-[6.5px] -rotate-45"
-                  : ""
-              }`}
+              } ${menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""}`}
             />
           </button>
         </div>
@@ -204,9 +182,7 @@ function Header({ language, setLanguage, t }) {
       {/* MOBILE MENU */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
-          menuOpen
-            ? "max-h-[470px] opacity-100"
-            : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[470px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="border-t border-white/10 bg-[#22304b] shadow-[0_20px_35px_rgba(15,23,42,0.18)]">
@@ -252,17 +228,13 @@ function Header({ language, setLanguage, t }) {
                   closeMenu();
                 }}
                 className={`transition duration-300 ${
-                  language === "de"
-                    ? "text-white"
-                    : "text-white/35"
+                  language === "de" ? "text-white" : "text-white/35"
                 }`}
               >
                 DE
               </button>
 
-              <span className="text-white/25">
-                /
-              </span>
+              <span className="text-white/25">/</span>
 
               <button
                 type="button"
@@ -271,9 +243,7 @@ function Header({ language, setLanguage, t }) {
                   closeMenu();
                 }}
                 className={`transition duration-300 ${
-                  language === "en"
-                    ? "text-white"
-                    : "text-white/35"
+                  language === "en" ? "text-white" : "text-white/35"
                 }`}
               >
                 EN
