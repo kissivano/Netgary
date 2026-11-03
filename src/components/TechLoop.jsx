@@ -1,21 +1,37 @@
 import {
   SiReact,
   SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
   SiTailwindcss,
   SiNodedotjs,
+  SiLaravel,
+  SiMongodb,
+  SiPostgresql,
   SiSupabase,
   SiVite,
   SiVercel,
+  SiGit,
+  SiGithub,
+  SiDocker,
 } from "react-icons/si";
 
 const tech = [
   { name: "React", icon: SiReact },
+  { name: "Next.js", icon: SiNextdotjs },
   { name: "JavaScript", icon: SiJavascript },
+  { name: "TypeScript", icon: SiTypescript },
   { name: "Tailwind CSS", icon: SiTailwindcss },
   { name: "Node.js", icon: SiNodedotjs },
+  { name: "Laravel", icon: SiLaravel },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Supabase", icon: SiSupabase },
   { name: "Vite", icon: SiVite },
   { name: "Vercel", icon: SiVercel },
+  { name: "Git", icon: SiGit },
+  { name: "GitHub", icon: SiGithub },
+  { name: "Docker", icon: SiDocker },
 ];
 
 function TechGroup() {
@@ -61,7 +77,7 @@ function CapabilityGroup({ items }) {
 function TechMarquee() {
   return (
     <div className="overflow-hidden">
-      <div className="flex w-max animate-[marquee_28s_linear_infinite]">
+      <div className="flex w-max animate-[marquee_42s_linear_infinite]">
         <TechGroup />
         <TechGroup />
       </div>
