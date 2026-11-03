@@ -258,10 +258,10 @@ function Hero({ t }) {
   return (
     <section
       id="home"
-      className="relative min-h-[700px] overflow-hidden border-b border-border bg-white pt-16 md:pt-20 lg:min-h-[900px]"
+      className="relative overflow-visible border-b border-border bg-white pt-16 lg:min-h-[900px] lg:overflow-hidden lg:pt-20"
     >
-      {/* AMBIENT LIGHT */}
-      <div className="pointer-events-none absolute top-[70px] right-[-120px] h-[620px] w-[620px] rounded-full bg-brand/[0.07] blur-[100px]" />
+      {/* DESKTOP AMBIENT LIGHT */}
+      <div className="pointer-events-none absolute top-[70px] right-[-120px] hidden h-[620px] w-[620px] rounded-full bg-brand/[0.07] blur-[100px] lg:block" />
 
       <div className="pointer-events-none absolute top-[250px] right-[220px] hidden h-[300px] w-[300px] rounded-full bg-[#8ca0d8]/10 blur-[90px] lg:block" />
 
@@ -319,69 +319,11 @@ function Hero({ t }) {
         <div className="absolute top-0 right-0 h-full w-[50%] bg-white/18 backdrop-blur-[1.5px]" />
       </div>
 
-      {/* MOBILE CODE WINDOW */}
-      <div className="pointer-events-none absolute top-[255px] right-[-35px] z-0 block w-[500px] rotate-[1.5deg] opacity-[0.82] lg:hidden">
-        <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white/92 shadow-[0_28px_90px_rgba(40,54,84,0.13)]">
-          {/* TOP BAR */}
-          <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
-            <div className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#ff605c]" />
-              <span className="h-2 w-2 rounded-full bg-[#ffbd44]" />
-              <span className="h-2 w-2 rounded-full bg-[#00ca4e]" />
-            </div>
-
-            <div className="flex items-center gap-2 text-[10px] text-zinc-400">
-              <span className="text-[#61dafb]">⚛</span>
-              Hero.jsx
-            </div>
-
-            <div className="w-10" />
-          </div>
-
-          {/* CODE */}
-          <div className="relative h-[380px] overflow-hidden px-5 py-5">
-            <div className="font-mono text-[10px] leading-[21px]">
-              {lineData.map((line, index) => (
-                <div
-                  key={`mobile-${line.number}`}
-                  className="flex min-h-[21px]"
-                >
-                  <span className="mr-4 w-5 shrink-0 text-right text-zinc-300">
-                    {line.number}
-                  </span>
-
-                  <span className="whitespace-pre">
-                    <VisibleTokens
-                      tokens={line.tokens}
-                      visibleCharacters={line.visibleOnLine}
-                    />
-
-                    {index === activeLineIndex && (
-                      <span className="ml-[1px] inline-block h-[13px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* SOFTER FADE */}
-            <div className="absolute inset-x-0 bottom-0 h-20 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.12)_45%,rgba(255,255,255,0.72)_100%)]" />
-          </div>
-        </div>
-      </div>
-
-      {/* MOBILE OVERLAY */}
-      <div className="pointer-events-none absolute inset-0 z-[1] block lg:hidden">
-        <div className="absolute top-0 left-0 h-[315px] w-full bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_70%,rgba(255,255,255,0.7)_100%)]" />
-
-        <div className="absolute top-[300px] left-0 h-[300px] w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.68)_36%,rgba(255,255,255,0.25)_70%,rgba(255,255,255,0.06)_100%)]" />
-      </div>
-
       {/* HERO CONTENT */}
-      <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-start px-6 pt-14 pb-8 sm:pt-20 sm:pb-12 lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-14 lg:flex lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
+        <div className="relative max-w-3xl">
           {/* STATUS */}
-          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand/10 bg-white/80 px-4 py-2 backdrop-blur-md">
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand/10 bg-white/85 px-4 py-2 backdrop-blur-md">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
 
@@ -397,6 +339,7 @@ function Hero({ t }) {
           <h1 className="max-w-4xl font-heading text-[56px] font-semibold leading-[0.91] tracking-[-0.052em] text-brand sm:text-[82px] lg:text-[104px]">
             {t.hero.line1}
             <br />
+
             {t.hero.line2}
             <br />
 
@@ -408,8 +351,8 @@ function Hero({ t }) {
             {t.hero.description}
           </p>
 
-          {/* CTA PANEL */}
-          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-white/70 bg-white/74 p-2 shadow-[0_18px_50px_rgba(40,54,84,0.08)] backdrop-blur-xl">
+          {/* CTA */}
+          <div className="relative z-20 mt-8 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-white/80 bg-white/90 p-2 shadow-[0_18px_50px_rgba(40,54,84,0.08)] backdrop-blur-xl">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-[15px] bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.18)]"
@@ -426,11 +369,59 @@ function Hero({ t }) {
               {t.hero.secondaryButton}
             </a>
           </div>
+
+          {/* MOBILE CODE WINDOW - OVERLAY UNDER CTA */}
+          <div className="pointer-events-none absolute top-[calc(100%+18px)] left-[120px] z-0 block w-[500px] rotate-[1.5deg] lg:hidden">
+            <div className="relative overflow-hidden rounded-[26px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.13)]">
+              {/* TOP BAR */}
+              <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-[#ff605c]" />
+                  <span className="h-2 w-2 rounded-full bg-[#ffbd44]" />
+                  <span className="h-2 w-2 rounded-full bg-[#00ca4e]" />
+                </div>
+
+                <div className="flex items-center gap-2 text-[10px] text-zinc-400">
+                  <span className="text-[#61dafb]">⚛</span>
+                  Hero.jsx
+                </div>
+
+                <div className="w-10" />
+              </div>
+
+              {/* CODE */}
+              <div className="relative h-[315px] overflow-hidden px-5 py-5">
+                <div className="font-mono text-[10px] leading-[21px]">
+                  {lineData.map((line, index) => (
+                    <div
+                      key={`mobile-${line.number}`}
+                      className="flex min-h-[21px]"
+                    >
+                      <span className="mr-4 w-5 shrink-0 select-none text-right text-zinc-300">
+                        {line.number}
+                      </span>
+
+                      <span className="whitespace-pre">
+                        <VisibleTokens
+                          tokens={line.tokens}
+                          visibleCharacters={line.visibleOnLine}
+                        />
+
+                        {index === activeLineIndex && (
+                          <span className="ml-[1px] inline-block h-[13px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* VERY LIGHT BOTTOM FADE ONLY */}
+                <div className="absolute inset-x-0 bottom-0 h-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.65)_100%)]" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* MOBILE BOTTOM FADE */}
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] h-12 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,#ffffff_100%)] lg:hidden" />
 
       {/* DESKTOP BOTTOM FADE */}
       <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] hidden h-28 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.45)_70%,#ffffff_100%)] lg:block" />
