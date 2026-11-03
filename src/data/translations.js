@@ -1,153 +1,162 @@
 export const translations = {
-  hu: {
+  de: {
     nav: {
-      about: "Rólunk",
-      services: "Szolgáltatások",
-      googleAds: "Google hirdetések",
-      reviews: "Visszajelzések",
-      contact: "Kapcsolat",
-      letsTalk: "Beszéljünk",
+      about: "Über uns",
+      services: "Leistungen",
+      googleAds: "Google Ads",
+      contact: "Kontakt",
+      letsTalk: "Kontakt",
     },
 
     hero: {
-      available: "Új projektekre elérhető",
-      line1: "Weboldalakat",
-      line2: "építünk, amelyek",
-      line3: "működnek.",
+      available: "Verfügbar für neue Projekte",
+      line1: "Wir entwickeln",
+      line2: "Websites, die",
+      line3: "funktionieren.",
       description:
-        "Modern weboldalak és digitális megoldások letisztult designnal, átgondolt fejlesztéssel és megfelelő technológiával.",
-      primaryButton: "Projekt indítása",
-      secondaryButton: "Szolgáltatások",
+        "Moderne Websites und digitale Lösungen mit klarem Design, durchdachter Entwicklung und der passenden Technologie.",
+      primaryButton: "Projekt starten",
+      secondaryButton: "Leistungen",
     },
 
     intro: {
-      label: "Amit csinálunk",
-      title1: "Digitális élményeket",
-      title2: "építünk, amelyek",
-      words: ["letisztultak.", "gyorsak.", "modernek.", "skálázhatók."],
+      label: "Was wir machen",
+      title1: "Wir entwickeln digitale",
+      title2: "Erlebnisse, die",
+      words: [
+        "modern sind.",
+        "schnell sind.",
+        "skalierbar sind.",
+        "funktionieren.",
+      ],
       description:
-        "A modern bemutatkozó oldalaktól egészen a webalkalmazásokig ötvözzük a letisztult designt a megbízható fejlesztéssel.",
-      items: ["Weboldalak", "Webappok", "Webshopok", "UI / UX"],
+        "Von modernen Unternehmenswebsites bis hin zu individuellen Webanwendungen verbinden wir klares Design mit zuverlässiger Entwicklung.",
+      items: ["Websites", "Web Apps", "Onlineshops", "UI / UX"],
     },
 
     services: {
-      label: "Szolgáltatások",
-      title: "Amit meg tudunk építeni.",
+      label: "Leistungen",
+      title: "Was wir für Sie entwickeln.",
       items: [
         {
           number: "01",
-          title: "Webfejlesztés",
+          title: "Webentwicklung",
           description:
-            "Gyors, skálázható weboldalak és webalkalmazások modern technológiákkal.",
+            "Schnelle, skalierbare Websites und Webanwendungen mit modernen Technologien.",
         },
         {
           number: "02",
           title: "Webdesign",
           description:
-            "Letisztult, modern felületek, amelyek az átláthatóságra és a használhatóságra épülnek.",
+            "Klare, moderne Benutzeroberflächen mit Fokus auf Nutzerfreundlichkeit und visueller Konsistenz.",
         },
         {
           number: "03",
-          title: "Webshopok",
+          title: "E-Commerce",
           description:
-            "Modern online áruházak termékekre, teljesítményre és konverzióra optimalizálva.",
+            "Moderne Onlineshops mit Fokus auf Produkte, Performance und Conversion.",
         },
         {
           number: "04",
-          title: "Teljesítmény & támogatás",
+          title: "Performance & Support",
           description:
-            "Optimalizálás, karbantartás és folyamatos fejlesztés meglévő digitális projektekhez.",
+            "Optimierung, Wartung und kontinuierliche Weiterentwicklung bestehender digitaler Projekte.",
         },
       ],
     },
 
     tech: {
-      label: "Technológiák és képességek",
+      label: "Technologien & Kompetenzen",
       capabilities: [
-        "Webfejlesztés",
+        "Webentwicklung",
         "UI / UX",
-        "Webshopok",
-        "Reszponzív design",
-        "API integráció",
-        "Teljesítmény",
-        "Karbantartás",
+        "E-Commerce",
+        "Responsive Design",
+        "API-Integration",
+        "Performance",
+        "Wartung",
       ],
     },
 
     why: {
-      label: "Miért NETGARY",
-      title1: "Kis stúdió.",
-      title2: "Nagy figyelem",
-      title3: "a részletekre.",
+      label: "Warum NETGARY",
+      title1: "Kleines Studio.",
+      title2: "Grosse Aufmerksamkeit",
+      title3: "für Details.",
       items: [
         {
           number: "01",
-          title: "Közvetlen kommunikáció",
-          text: "Nincsenek felesleges közvetítői körök. Közvetlenül azzal dolgozol, aki a projektedet építi.",
+          title: "Direkte Kommunikation",
+          text: "Keine unnötigen Zwischenebenen. Sie arbeiten direkt mit der Person zusammen, die Ihr Projekt entwickelt.",
         },
         {
           number: "02",
-          title: "Tudatos fejlesztés",
-          text: "Minden design- és fejlesztési döntés mögött konkrét cél és átgondolt megoldás áll.",
+          title: "Durchdachte Entwicklung",
+          text: "Jede Design- und Entwicklungsentscheidung verfolgt ein klares Ziel und basiert auf einer durchdachten Lösung.",
         },
         {
           number: "03",
-          title: "Kicsi, rugalmas, gyors",
-          text: "A fókuszált munkafolyamat gyorsabb döntéseket, tisztább kivitelezést és kevesebb kompromisszumot jelent.",
+          title: "Klein, flexibel, schnell",
+          text: "Ein fokussierter Workflow ermöglicht schnellere Entscheidungen, eine saubere Umsetzung und weniger Kompromisse.",
         },
       ],
     },
 
     contact: {
-      label: "Kapcsolat",
-      title1: "Üdvözöllek,",
-      title2: "Kiss Ádám vagyok.",
-      role: "A NETGARY fejlesztője és tulajdonosa",
+      label: "Kontakt",
+      title1: "Hallo,",
+      title2: "ich bin Ádám Kiss.",
+      role: "Entwickler & Inhaber von NETGARY",
       description:
-        "Ha van egy ötleted, új weboldalra van szükséged, vagy a meglévőt szeretnéd továbbfejleszteni, beszéljünk róla.",
-      callButton: "Hívás",
-      quoteButton: "Kérj egyedi ajánlatot",
-      response: "Keress bátran, közvetlenül velem fogsz beszélni.",
-      footerLine: "Webfejlesztés · Design · Digitális megoldások",
+        "Sie haben eine Idee, benötigen eine neue Website oder möchten Ihr bestehendes Projekt weiterentwickeln? Schreiben Sie mir.",
+      callButton: "WhatsApp",
+      quoteButton: "Individuelle Offerte anfragen",
+      response:
+        "Kontaktieren Sie mich gerne direkt – Sie sprechen persönlich mit mir.",
+      footerLine: "Webentwicklung · Design · Digitale Lösungen",
     },
 
     quote: {
-      back: "Vissza",
-      label: "Egyedi ajánlat",
-      title1: "Mesélj a",
-      title2: "projektedről.",
+      back: "Zurück",
+      label: "Individuelle Offerte",
+      title1: "Erzählen Sie uns von",
+      title2: "Ihrem Projekt.",
       description:
-        "Töltsd ki az alábbi űrlapot, és a megadott információk alapján elkészítjük a személyre szabott ajánlatodat.",
+        "Füllen Sie das Formular aus. Auf Grundlage Ihrer Angaben erstellen wir eine individuelle Offerte für Ihr Projekt.",
 
       form: {
-        name: "Név",
-        namePlaceholder: "Teljes neved",
+        name: "Name",
+        namePlaceholder: "Ihr vollständiger Name",
 
-        email: "E-mail",
-        emailPlaceholder: "pelda@email.hu",
+        email: "E-Mail",
+        emailPlaceholder: "name@email.ch",
 
-        source: "Honnan hallottál rólam?",
-        sourcePlaceholder: "Válassz egy lehetőséget",
-        recommendation: "Ajánlás",
-        other: "Egyéb",
+        source: "Wie sind Sie auf uns aufmerksam geworden?",
+        sourcePlaceholder: "Bitte auswählen",
 
-        project: "Projekt röviden",
+        recommendation: "Empfehlung",
+        other: "Andere",
+
+        project: "Projektbeschreibung",
         projectPlaceholder:
-          "Írd le röviden, milyen weboldalt vagy digitális megoldást szeretnél...",
+          "Beschreiben Sie kurz, welche Website oder digitale Lösung Sie benötigen...",
 
-        submit: "Ajánlatkérés elküldése",
-        sending: "Küldés...",
+        submit: "Anfrage senden",
+        sending: "Wird gesendet...",
+
         success:
-          "Köszönöm! Megkaptam az ajánlatkérésedet, hamarosan jelentkezem.",
-        error: "Hiba történt az elküldés közben. Kérlek, próbáld újra.",
+          "Vielen Dank! Ihre Anfrage ist bei uns eingegangen. Wir melden uns in Kürze bei Ihnen.",
+
+        error:
+          "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
       },
     },
 
     footer: {
-      rights: "Minden jog fenntartva.",
-      services: "Szolgáltatások",
-      about: "Rólunk",
-      contact: "Kapcsolat",
+      rights: "Alle Rechte vorbehalten.",
+      services: "Leistungen",
+      about: "Über uns",
+      contact: "Kontakt",
       instagram: "Instagram",
     },
   },
@@ -157,7 +166,6 @@ export const translations = {
       about: "About",
       services: "Services",
       googleAds: "Google Ads",
-      reviews: "Reviews",
       contact: "Contact",
       letsTalk: "Let's talk",
     },
@@ -168,7 +176,7 @@ export const translations = {
       line2: "websites that",
       line3: "work.",
       description:
-        "Modern websites and digital experiences built with clean design, thoughtful development and the right technology.",
+        "Modern websites and digital solutions built with clean design, thoughtful development and the right technology.",
       primaryButton: "Start a project",
       secondaryButton: "Services",
     },
@@ -176,11 +184,11 @@ export const translations = {
     intro: {
       label: "What we do",
       title1: "We build digital",
-      title2: "experiences that feel",
-      words: ["clean.", "fast.", "modern.", "scalable."],
+      title2: "experiences that are",
+      words: ["modern.", "fast.", "scalable.", "effective."],
       description:
-        "From clean marketing websites to modern web applications, we combine thoughtful design with reliable development.",
-      items: ["Websites", "Web apps", "E-commerce", "UI / UX"],
+        "From modern business websites to custom web applications, we combine clean design with reliable development.",
+      items: ["Websites", "Web Apps", "E-commerce", "UI / UX"],
     },
 
     services: {
@@ -197,7 +205,7 @@ export const translations = {
           number: "02",
           title: "Web Design",
           description:
-            "Clean, thoughtful interfaces focused on clarity, usability and visual consistency.",
+            "Clean, modern interfaces focused on usability and visual consistency.",
         },
         {
           number: "03",
@@ -209,7 +217,7 @@ export const translations = {
           number: "04",
           title: "Performance & Support",
           description:
-            "Optimization, maintenance and long-term improvements for existing digital products.",
+            "Optimization, maintenance and continuous development for existing digital projects.",
         },
       ],
     },
@@ -236,12 +244,12 @@ export const translations = {
         {
           number: "01",
           title: "Direct communication",
-          text: "No agency layers. You work directly with the person building your product.",
+          text: "No unnecessary agency layers. You work directly with the person building your project.",
         },
         {
           number: "02",
-          title: "Built with purpose",
-          text: "Every design and development decision has a clear reason behind it.",
+          title: "Thoughtful development",
+          text: "Every design and development decision has a clear purpose behind it.",
         },
         {
           number: "03",
@@ -257,11 +265,11 @@ export const translations = {
       title2: "I'm Ádám Kiss.",
       role: "Developer & Owner of NETGARY",
       description:
-        "If you have an idea, need a new website or want to improve an existing one, let's talk about it.",
-      callButton: "Call",
+        "If you have an idea, need a new website or want to improve an existing project, feel free to get in touch.",
+      callButton: "WhatsApp",
       quoteButton: "Request a custom quote",
       response: "Feel free to reach out — you'll be speaking directly with me.",
-      footerLine: "Web development · Design · Digital products",
+      footerLine: "Web Development · Design · Digital Solutions",
     },
 
     quote: {
@@ -279,20 +287,24 @@ export const translations = {
         email: "Email",
         emailPlaceholder: "name@email.com",
 
-        source: "How did you hear about me?",
+        source: "How did you hear about us?",
         sourcePlaceholder: "Choose an option",
+
         recommendation: "Recommendation",
         other: "Other",
 
         project: "Project in brief",
         projectPlaceholder:
-          "Tell me briefly what kind of website or digital solution you're looking for...",
+          "Tell us briefly what kind of website or digital solution you're looking for...",
 
-        submit: "Send quote request",
+        submit: "Send request",
         sending: "Sending...",
+
         success:
-          "Thank you! Your request has been received. I'll get back to you soon.",
-        error: "Something went wrong. Please try again.",
+          "Thank you! Your request has been received. We'll get back to you shortly.",
+
+        error:
+          "Something went wrong while sending your request. Please try again.",
       },
     },
 
