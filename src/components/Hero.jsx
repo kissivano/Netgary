@@ -183,8 +183,6 @@ function Hero({ t }) {
 
   const totalLength = useMemo(() => getTotalLength(codeLines), [codeLines]);
 
-  // Everything through line 7 stays on screen.
-  // Only the lower part is edited after the first animation.
   const editPoint = useMemo(() => getPrefixLength(codeLines, 7), [codeLines]);
 
   useEffect(() => {
@@ -233,7 +231,6 @@ function Hero({ t }) {
         Math.min(length, visibleCharacters - usedCharacters),
       );
 
-      const lineStart = usedCharacters;
       const lineEnd = usedCharacters + length;
 
       usedCharacters += length;
@@ -242,7 +239,6 @@ function Hero({ t }) {
         ...line,
         length,
         visibleOnLine,
-        lineStart,
         lineEnd,
       };
     });
@@ -262,15 +258,102 @@ function Hero({ t }) {
   return (
     <section
       id="home"
-      className="relative overflow-hidden border-b border-border bg-white pt-16 md:pt-20"
+      className="relative min-h-[760px] overflow-hidden border-b border-border bg-white pt-16 md:pt-20 lg:min-h-[860px]"
     >
-      <div className="mx-auto grid min-h-[680px] max-w-7xl items-center gap-10 px-6 py-12 sm:py-14 lg:min-h-[780px] lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-8 lg:py-24">
-        {/* LEFT */}
-        <div className="relative z-10 max-w-xl">
-          <div className="mb-6 flex items-center gap-3">
-            {/* AVAILABLE STATUS */}
+      {/* BACKGROUND CODE WINDOW */}
+      <div className="pointer-events-none absolute top-[140px] right-[-130px] z-0 hidden w-[760px] rotate-[2deg] lg:block">
+        <div className="relative overflow-hidden rounded-[28px] border border-[#e7e9ee] bg-[#fbfbfc]/90 shadow-[0_40px_120px_rgba(40,54,84,0.08)]">
+          {/* TOP BAR */}
+          <div className="flex h-14 items-center justify-between border-b border-[#e8e8eb] px-5">
+            <div className="flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ff605c]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd44]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#00ca4e]" />
+            </div>
+
+            <div className="flex items-center gap-2 text-xs text-zinc-400">
+              <span className="text-[#61dafb]">⚛</span>
+              Hero.jsx
+            </div>
+
+            <div className="w-12" />
+          </div>
+
+          {/* CODE */}
+          <div className="relative min-h-[560px] overflow-hidden px-7 py-8">
+            <div className="font-mono text-[13px] leading-7">
+              {lineData.map((line, index) => (
+                <div key={line.number} className="flex min-h-7">
+                  <span className="mr-5 w-5 shrink-0 select-none text-right text-zinc-300">
+                    {line.number}
+                  </span>
+
+                  <span className="whitespace-pre">
+                    <VisibleTokens
+                      tokens={line.tokens}
+                      visibleCharacters={line.visibleOnLine}
+                    />
+
+                    {index === activeLineIndex && (
+                      <span className="ml-[1px] inline-block h-[18px] w-[1.5px] translate-y-[4px] animate-pulse bg-brand" />
+                    )}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* INTERNAL FADE */}
+          <div className="absolute inset-x-0 bottom-0 h-72 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.15)_25%,rgba(255,255,255,0.55)_60%,rgba(255,255,255,0.94)_100%)]" />
+        </div>
+      </div>
+
+      {/* BLUR + WHITE OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 z-[1] hidden lg:block">
+        <div className="absolute top-0 right-0 h-full w-[58%] bg-white/30 backdrop-blur-[2px]" />
+
+        <div className="absolute inset-y-0 left-[38%] w-[42%] bg-[linear-gradient(to_right,#ffffff_0%,rgba(255,255,255,0.96)_20%,rgba(255,255,255,0.78)_55%,rgba(255,255,255,0.22)_100%)]" />
+      </div>
+
+      {/* MOBILE BACKGROUND CODE */}
+      <div className="pointer-events-none absolute right-[-160px] bottom-[-80px] z-0 block w-[560px] rotate-[3deg] opacity-35 blur-[0.5px] lg:hidden">
+        <div className="overflow-hidden rounded-[24px] border border-border bg-[#fbfbfc]">
+          <div className="h-[420px] px-6 py-8">
+            <div className="font-mono text-[11px] leading-6">
+              {lineData.map((line, index) => (
+                <div key={`mobile-${line.number}`} className="flex min-h-6">
+                  <span className="mr-4 w-5 shrink-0 text-right text-zinc-300">
+                    {line.number}
+                  </span>
+
+                  <span className="whitespace-pre">
+                    <VisibleTokens
+                      tokens={line.tokens}
+                      visibleCharacters={line.visibleOnLine}
+                    />
+
+                    {index === activeLineIndex && (
+                      <span className="ml-[1px] inline-block h-[15px] w-[1px] translate-y-[3px] animate-pulse bg-brand" />
+                    )}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE WHITE OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,#ffffff_0%,rgba(255,255,255,0.98)_48%,rgba(255,255,255,0.82)_70%,rgba(255,255,255,0.62)_100%)] lg:hidden" />
+
+      {/* HERO CONTENT */}
+      <div className="relative z-10 mx-auto flex min-h-[700px] max-w-7xl items-center px-6 py-16 sm:py-20 lg:min-h-[780px] lg:px-8 lg:py-24">
+        <div className="max-w-3xl">
+          {/* AVAILABILITY */}
+          <div className="mb-7 flex items-center gap-3">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
             </span>
 
@@ -279,22 +362,26 @@ function Hero({ t }) {
             </p>
           </div>
 
-          <h1 className="font-heading text-[56px] font-semibold leading-[0.94] tracking-[-0.045em] text-brand sm:text-[72px] lg:text-[88px]">
+          {/* TITLE */}
+          <h1 className="max-w-4xl font-heading text-[58px] font-semibold leading-[0.92] tracking-[-0.05em] text-brand sm:text-[78px] lg:text-[98px]">
             {t.hero.line1}
             <br />
             {t.hero.line2}
             <br />
+
             <span className="text-brand-light">{t.hero.line3}</span>
           </h1>
 
-          <p className="mt-7 max-w-lg text-base leading-7 text-zinc-500 sm:text-lg">
+          {/* DESCRIPTION */}
+          <p className="mt-8 max-w-xl text-base leading-7 text-zinc-500 sm:text-lg">
             {t.hero.description}
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          {/* CTA */}
+          <div className="relative mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(40,54,84,0.16)]"
             >
               {t.hero.primaryButton}
 
@@ -303,64 +390,16 @@ function Hero({ t }) {
 
             <a
               href="#services"
-              className="rounded-full border border-border px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:border-brand"
+              className="rounded-full border border-border bg-white/75 px-6 py-3.5 text-sm font-medium text-brand backdrop-blur-sm transition duration-300 hover:border-brand"
             >
               {t.hero.secondaryButton}
             </a>
           </div>
         </div>
-
-        {/* RIGHT - CODE WINDOW */}
-        <div className="relative lg:ml-6">
-          <div className="relative overflow-hidden rounded-[22px] border border-[#e5e7eb] bg-[#fbfbfc]">
-            {/* TOP BAR */}
-            <div className="flex h-14 items-center justify-between border-b border-[#e8e8eb] px-5">
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ff605c]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd44]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#00ca4e]" />
-              </div>
-
-              <div className="flex items-center gap-2 text-xs text-zinc-400">
-                <span className="text-[#61dafb]">⚛</span>
-                Hero.jsx
-              </div>
-
-              <div className="w-12" />
-            </div>
-
-            {/* CODE */}
-            <div className="relative min-h-[520px] overflow-hidden px-4 py-8 sm:px-7">
-              <div className="font-mono text-[12px] leading-7 sm:text-[13px]">
-                {lineData.map((line, index) => (
-                  <div key={line.number} className="flex min-h-7">
-                    <span className="mr-5 w-5 shrink-0 select-none text-right text-zinc-300">
-                      {line.number}
-                    </span>
-
-                    <span className="whitespace-pre">
-                      <VisibleTokens
-                        tokens={line.tokens}
-                        visibleCharacters={line.visibleOnLine}
-                      />
-
-                      {index === activeLineIndex && (
-                        <span className="ml-[1px] inline-block h-[18px] w-[1.5px] translate-y-[4px] animate-pulse bg-brand" />
-                      )}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* SMOOTH WHITE FADE */}
-              <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-72 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.03)_15%,rgba(255,255,255,0.1)_30%,rgba(255,255,255,0.25)_45%,rgba(255,255,255,0.5)_62%,rgba(255,255,255,0.75)_78%,rgba(255,255,255,0.92)_91%,#fff_100%)]" />
-            </div>
-          </div>
-
-          {/* BACKGROUND DETAIL */}
-          <div className="absolute -top-16 -right-20 -z-10 h-80 w-80 rounded-full bg-[#f4f6fa] blur-3xl" />
-        </div>
       </div>
+
+      {/* BACKGROUND DETAIL */}
+      <div className="pointer-events-none absolute -top-32 -right-40 z-0 h-[520px] w-[520px] rounded-full bg-[#f4f6fa] blur-3xl" />
     </section>
   );
 }
