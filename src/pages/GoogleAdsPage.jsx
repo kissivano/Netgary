@@ -12,139 +12,151 @@ import {
 } from "lucide-react";
 
 const content = {
-  hu: {
-    back: "Vissza",
+  de: {
+    back: "Zurück",
     badge: "Google Ads Partner",
-    experience: "6 év Google Ads tapasztalat",
+    experience: "6 Jahre Google Ads Erfahrung",
 
-    heroTitle1: "Google Ads kampányok,",
-    heroTitle2: "amik nem csak költenek.",
+    heroTitle1: "Google Ads Kampagnen,",
+    heroTitle2: "die mehr als nur Budget ausgeben.",
 
     heroDescription:
-      "6 éve kezelek Google Ads kampányokat a stratégiától és a méréstől kezdve egészen a folyamatos optimalizálásig. A cél nem egyszerűen több kattintás, hanem több értékes érdeklődő és vásárló.",
+      "Seit 6 Jahren betreue ich Google Ads Kampagnen – von Strategie und Tracking bis zur laufenden Optimierung. Das Ziel sind nicht einfach mehr Klicks, sondern mehr relevante Anfragen und Kunden.",
 
-    primaryButton: "Kérek kampányelemzést",
-    secondaryButton: "Szolgáltatások",
+    primaryButton: "Kampagnenanalyse anfragen",
+    secondaryButton: "Leistungen",
 
     stats: [
       {
-        value: "6 év",
-        label: "Google Ads tapasztalat",
+        value: "6 Jahre",
+        label: "Google Ads Erfahrung",
       },
       {
         value: "Google",
         label: "Ads Partner",
       },
       {
-        value: "Folyamatos",
-        label: "optimalizálás",
+        value: "Laufend",
+        label: "optimiert",
       },
       {
-        value: "Adatalapú",
-        label: "döntések",
+        value: "Datenbasiert",
+        label: "entscheiden",
       },
     ],
 
-    servicesLabel: "Google Ads kezelés",
-    servicesTitle1: "Nem elég elindítani",
-    servicesTitle2: "egy kampányt.",
+    servicesLabel: "Google Ads Management",
+    servicesTitle1: "Eine Kampagne zu starten",
+    servicesTitle2: "ist erst der Anfang.",
 
     servicesDescription:
-      "A jól működő Google Ads rendszer folyamatos elemzést, pontos mérést és rendszeres optimalizálást igényel.",
+      "Ein erfolgreiches Google Ads System benötigt kontinuierliche Analyse, präzises Tracking und regelmässige Optimierung.",
 
     services: [
       {
-        title: "Kampánystratégia",
+        title: "Kampagnenstrategie",
         description:
-          "A megfelelő kampánytípusok, célzások és struktúra kialakítása az üzleti céljaid alapján.",
+          "Die passenden Kampagnentypen, Zielgruppen und Kontostrukturen werden auf Ihre Geschäftsziele abgestimmt.",
         icon: Target,
       },
       {
-        title: "Kulcsszókutatás",
+        title: "Keyword-Recherche",
         description:
-          "A valóban értékes keresések megtalálása és a felesleges kattintások kizárása.",
+          "Wir identifizieren relevante Suchanfragen und reduzieren unnötige Klicks, die Werbebudget verschwenden.",
         icon: Search,
       },
       {
-        title: "Hirdetések optimalizálása",
+        title: "Anzeigenoptimierung",
         description:
-          "Hirdetésszövegek, ajánlatok, keresési kifejezések és kampánybeállítások folyamatos fejlesztése.",
+          "Anzeigentexte, Angebote, Suchbegriffe und Kampagneneinstellungen werden kontinuierlich weiterentwickelt.",
         icon: MousePointerClick,
       },
       {
-        title: "Konverziókövetés",
+        title: "Conversion Tracking",
         description:
-          "GA4, Google Tag Manager és Google Ads konverziók megfelelő beállítása, hogy valódi adatok alapján dönthessünk.",
+          "GA4, Google Tag Manager und Google Ads Conversions werden korrekt eingerichtet, damit Entscheidungen auf echten Daten basieren.",
         icon: BarChart3,
       },
       {
         title: "Performance Max",
         description:
-          "PMax kampányok felépítése, optimalizálása és az eredmények folyamatos elemzése.",
+          "Aufbau, Betreuung und Optimierung von Performance-Max-Kampagnen auf Basis der tatsächlichen Performance.",
         icon: Settings2,
       },
       {
         title: "Remarketing",
         description:
-          "A korábbi látogatók újbóli megszólítása releváns kampányokkal és ajánlatokkal.",
+          "Frühere Websitebesucher werden mit relevanten Kampagnen und Angeboten erneut angesprochen.",
         icon: ArrowUpRight,
       },
     ],
 
-    processLabel: "Folyamat",
-    processTitle1: "Átlátható.",
-    processTitle2: "Mérhető. Optimalizálható.",
+    processLabel: "Prozess",
+    processTitle1: "Transparent.",
+    processTitle2: "Messbar. Optimierbar.",
 
     process: [
       {
         number: "01",
         title: "Audit",
         description:
-          "Megnézem a meglévő fiókot, kampányokat, mérést és a legfontosabb problémákat.",
+          "Ich analysiere das bestehende Konto, die Kampagnen, das Tracking und die wichtigsten Optimierungsmöglichkeiten.",
       },
       {
         number: "02",
-        title: "Stratégia",
+        title: "Strategie",
         description:
-          "Meghatározzuk a célokat, kampánystruktúrát, célzásokat és a prioritásokat.",
+          "Wir definieren Ziele, Kampagnenstruktur, Targeting und die wichtigsten Prioritäten.",
       },
       {
         number: "03",
-        title: "Felépítés",
+        title: "Aufbau",
         description:
-          "Elkészülnek vagy újraszervezésre kerülnek a kampányok és a mérési rendszer.",
+          "Die Kampagnen und das Tracking werden neu aufgebaut oder entsprechend der Strategie überarbeitet.",
       },
       {
         number: "04",
-        title: "Optimalizálás",
+        title: "Optimierung",
         description:
-          "Az adatok alapján folyamatosan finomítom a kampányokat a jobb eredmények érdekében.",
+          "Auf Grundlage der Daten werden die Kampagnen kontinuierlich weiterentwickelt und verbessert.",
       },
     ],
 
     advantageLabel: "NETGARY + Google Ads",
-    advantageTitle1: "A hirdetés csak",
-    advantageTitle2: "az egyik fele.",
+    advantageTitle1: "Werbung ist nur",
+    advantageTitle2: "die eine Hälfte.",
 
     advantageDescription:
-      "A kampány eredménye nem csak a Google Ads fiókon múlik. A weboldal sebessége, felépítése, ajánlata és konverziós pontjai ugyanúgy meghatározzák, hogy a kattintásból lesz-e ügyfél.",
+      "Der Erfolg einer Kampagne hängt nicht nur vom Google Ads Konto ab. Geschwindigkeit, Aufbau, Angebot und Conversion-Punkte Ihrer Website entscheiden genauso darüber, ob aus einem Klick ein Kunde wird.",
 
     advantages: [
-      "Google Ads és webfejlesztés egy helyen",
-      "Landing oldalak gyors módosítása",
-      "Konverziókövetés technikai beállítása",
-      "Adatalapú fejlesztési javaslatok",
-      "Közvetlen kommunikáció",
+      "Google Ads und Webentwicklung aus einer Hand",
+      "Schnelle Optimierung von Landingpages",
+      "Technische Einrichtung des Conversion Trackings",
+      "Datenbasierte Empfehlungen für Ihre Website",
+      "Direkte Kommunikation",
     ],
 
     ctaLabel: "Google Ads",
-    ctaTitle1: "Nézzük meg,",
-    ctaTitle2: "hol folyik el a kereted.",
-    ctaDescription:
-      "Ha már hirdetsz, átnézem a jelenlegi kampányaidat. Ha most kezdenél, felépítjük a megfelelő rendszert az alapoktól.",
-    ctaButton: "Kérek egyedi ajánlatot",
+    ctaTitle1: "Finden wir heraus,",
+    ctaTitle2: "wo Ihr Budget verloren geht.",
 
-    footer: "Google Ads kezelés · Webfejlesztés · Digitális megoldások",
+    ctaDescription:
+      "Wenn Sie bereits Google Ads nutzen, analysiere ich Ihre bestehenden Kampagnen. Wenn Sie neu starten, bauen wir das passende System von Grund auf auf.",
+
+    ctaButton: "Individuelle Offerte anfragen",
+
+    footer: "Google Ads Management · Webentwicklung · Digitale Lösungen",
+
+    dashboard: {
+      performance: "Kampagnen-Performance",
+      optimization: "Optimierung",
+      clicks: "Klicks",
+      conversions: "Conversions",
+      roas: "ROAS",
+      overview: "Kampagnenübersicht",
+      active: "Aktiv",
+    },
   },
 
   en: {
@@ -275,16 +287,34 @@ const content = {
     ctaLabel: "Google Ads",
     ctaTitle1: "Let's find out",
     ctaTitle2: "where your budget is going.",
+
     ctaDescription:
       "If you're already advertising, I'll review your current campaigns. If you're starting from scratch, we'll build the right system from the ground up.",
+
     ctaButton: "Request a custom quote",
 
     footer: "Google Ads Management · Web Development · Digital Solutions",
+
+    dashboard: {
+      performance: "Campaign performance",
+      optimization: "Optimization",
+      clicks: "Clicks",
+      conversions: "Conversions",
+      roas: "ROAS",
+      overview: "Campaign overview",
+      active: "Active",
+    },
   },
 };
 
 function GoogleAdsPage({ language, setLanguage }) {
-  const c = content[language] || content.hu;
+  const c = content[language] || content.de;
+
+  const dashboardMetrics = [
+    c.dashboard.clicks,
+    c.dashboard.conversions,
+    c.dashboard.roas,
+  ];
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white">
@@ -299,17 +329,18 @@ function GoogleAdsPage({ language, setLanguage }) {
           </Link>
 
           <div className="flex items-center gap-5">
+            {/* LANGUAGE */}
             <div className="flex items-center gap-2 text-xs font-medium">
               <button
                 type="button"
-                onClick={() => setLanguage("hu")}
-                className={`transition ${
-                  language === "hu"
+                onClick={() => setLanguage("de")}
+                className={`transition duration-300 ${
+                  language === "de"
                     ? "text-brand"
                     : "text-zinc-300 hover:text-brand"
                 }`}
               >
-                HU
+                DE
               </button>
 
               <span className="text-zinc-300">/</span>
@@ -317,7 +348,7 @@ function GoogleAdsPage({ language, setLanguage }) {
               <button
                 type="button"
                 onClick={() => setLanguage("en")}
-                className={`transition ${
+                className={`transition duration-300 ${
                   language === "en"
                     ? "text-brand"
                     : "text-zinc-300 hover:text-brand"
@@ -327,11 +358,13 @@ function GoogleAdsPage({ language, setLanguage }) {
               </button>
             </div>
 
+            {/* BACK */}
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-brand"
+              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition duration-300 hover:text-brand"
             >
               <ArrowLeft size={16} strokeWidth={1.8} />
+
               <span className="hidden sm:inline">{c.back}</span>
             </Link>
           </div>
@@ -341,10 +374,12 @@ function GoogleAdsPage({ language, setLanguage }) {
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-white pt-16 md:pt-20">
         <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
+          {/* LEFT */}
           <div className="max-w-3xl">
             <div className="mb-7 flex flex-wrap items-center gap-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-medium text-brand">
                 <BadgeCheck size={16} strokeWidth={1.8} />
+
                 {c.badge}
               </div>
 
@@ -354,6 +389,7 @@ function GoogleAdsPage({ language, setLanguage }) {
             <h1 className="font-heading text-[54px] font-semibold leading-[0.94] tracking-[-0.045em] text-brand sm:text-[72px] lg:text-[84px]">
               {c.heroTitle1}
               <br />
+
               <span className="text-brand-light">{c.heroTitle2}</span>
             </h1>
 
@@ -363,16 +399,17 @@ function GoogleAdsPage({ language, setLanguage }) {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                to="/ajanlat"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition hover:opacity-90"
+                to="/angebot"
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90"
               >
                 {c.primaryButton}
+
                 <ArrowUpRight size={16} strokeWidth={1.8} />
               </Link>
 
               <a
                 href="#google-services"
-                className="rounded-full border border-border px-6 py-3.5 text-sm font-medium text-brand transition hover:border-brand"
+                className="rounded-full border border-border px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:border-brand"
               >
                 {c.secondaryButton}
               </a>
@@ -382,6 +419,7 @@ function GoogleAdsPage({ language, setLanguage }) {
           {/* ADS DASHBOARD */}
           <div className="relative min-w-0">
             <div className="overflow-hidden rounded-[24px] border border-border bg-[#fbfbfc]">
+              {/* DASHBOARD HEADER */}
               <div className="flex h-14 items-center justify-between border-b border-border px-5">
                 <div className="flex gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff605c]" />
@@ -394,15 +432,16 @@ function GoogleAdsPage({ language, setLanguage }) {
                 <div className="w-12" />
               </div>
 
+              {/* DASHBOARD CONTENT */}
               <div className="p-5 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">
-                      Campaign performance
+                      {c.dashboard.performance}
                     </p>
 
                     <p className="mt-2 font-heading text-3xl font-semibold text-brand">
-                      Optimization
+                      {c.dashboard.optimization}
                     </p>
                   </div>
 
@@ -411,8 +450,9 @@ function GoogleAdsPage({ language, setLanguage }) {
                   </div>
                 </div>
 
+                {/* METRICS */}
                 <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                  {["Clicks", "Conversions", "ROAS"].map((item, index) => (
+                  {dashboardMetrics.map((item, index) => (
                     <div
                       key={item}
                       className="min-w-0 rounded-[14px] border border-border bg-white p-4"
@@ -434,15 +474,17 @@ function GoogleAdsPage({ language, setLanguage }) {
                   ))}
                 </div>
 
+                {/* GRAPH */}
                 <div className="mt-5 overflow-hidden rounded-[18px] border border-border bg-white p-5">
                   <div className="flex items-center justify-between gap-4">
                     <p className="truncate text-sm font-medium text-brand">
-                      Campaign overview
+                      {c.dashboard.overview}
                     </p>
 
                     <span className="flex shrink-0 items-center gap-2 text-xs text-emerald-600">
                       <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                      Active
+
+                      {c.dashboard.active}
                     </span>
                   </div>
 
@@ -452,7 +494,9 @@ function GoogleAdsPage({ language, setLanguage }) {
                         <div
                           key={index}
                           className="min-w-0 flex-1 rounded-t-md bg-brand/10"
-                          style={{ height: `${height}%` }}
+                          style={{
+                            height: `${height}%`,
+                          }}
                         >
                           <div className="h-full w-full rounded-t-md bg-brand opacity-[0.78]" />
                         </div>
@@ -502,6 +546,7 @@ function GoogleAdsPage({ language, setLanguage }) {
               <h2 className="mt-5 font-heading text-5xl font-semibold leading-[0.96] tracking-[-0.035em] text-brand sm:text-6xl">
                 {c.servicesTitle1}
                 <br />
+
                 <span className="text-brand-light">{c.servicesTitle2}</span>
               </h2>
             </div>
@@ -550,6 +595,7 @@ function GoogleAdsPage({ language, setLanguage }) {
           <h2 className="mt-5 font-heading text-5xl font-semibold leading-[0.96] tracking-[-0.035em] text-brand sm:text-6xl">
             {c.processTitle1}
             <br />
+
             <span className="text-brand-light">{c.processTitle2}</span>
           </h2>
 
@@ -587,6 +633,7 @@ function GoogleAdsPage({ language, setLanguage }) {
             <h2 className="mt-5 font-heading text-5xl font-semibold leading-[0.96] tracking-[-0.035em] sm:text-6xl">
               {c.advantageTitle1}
               <br />
+
               <span className="text-white/50">{c.advantageTitle2}</span>
             </h2>
 
@@ -625,6 +672,7 @@ function GoogleAdsPage({ language, setLanguage }) {
                 <h2 className="font-heading text-5xl font-semibold leading-[0.96] tracking-[-0.035em] text-brand sm:text-6xl">
                   {c.ctaTitle1}
                   <br />
+
                   <span className="text-brand-light">{c.ctaTitle2}</span>
                 </h2>
 
@@ -635,8 +683,8 @@ function GoogleAdsPage({ language, setLanguage }) {
 
               <div className="lg:text-right">
                 <Link
-                  to="/ajanlat"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition hover:opacity-90"
+                  to="/angebot"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:opacity-90"
                 >
                   {c.ctaButton}
 

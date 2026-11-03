@@ -25,7 +25,7 @@ function ContactCTA({ t }) {
               <div className="relative shrink-0">
                 <img
                   src="/adam-profile.png"
-                  alt="Kiss Ádám"
+                  alt="Ádám Kiss"
                   className="h-14 w-14 rounded-full object-cover object-top ring-1 ring-white/15"
                 />
 
@@ -33,13 +33,14 @@ function ContactCTA({ t }) {
                 <span className="absolute right-0 bottom-0 flex h-4 w-4 items-center justify-center rounded-full bg-brand">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
                   </span>
                 </span>
               </div>
 
               <div>
-                <p className="text-sm font-medium text-white">Kiss Ádám</p>
+                <p className="text-sm font-medium text-white">Ádám Kiss</p>
 
                 <p className="mt-0.5 text-xs leading-5 text-white/45">
                   {t.contact.role}
@@ -69,7 +70,7 @@ function ContactCTA({ t }) {
 
               {/* CUSTOM QUOTE */}
               <Link
-                to="/ajanlat"
+                to="/angebot"
                 className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:border-white/40 hover:bg-white/5"
               >
                 {t.contact.quoteButton}
