@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Phone } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 function ContactCTA({ t }) {
   return (
@@ -54,12 +55,14 @@ function ContactCTA({ t }) {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              {/* CALL */}
+              {/* WHATSAPP */}
               <a
-                href="tel:+36703780054"
+                href="https://wa.me/41762692454"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-brand transition duration-300 hover:bg-white/90"
               >
-                <Phone size={16} strokeWidth={1.8} className="shrink-0" />
+                <FaWhatsapp className="text-[18px]" />
 
                 {t.contact.callButton}
               </a>
