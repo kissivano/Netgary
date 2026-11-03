@@ -258,7 +258,7 @@ function Hero({ t }) {
   return (
     <section
       id="home"
-      className="relative overflow-visible border-b border-border bg-white pt-16 lg:min-h-[900px] lg:overflow-hidden lg:pt-20"
+      className="relative overflow-hidden border-b border-border bg-white pt-16 lg:min-h-[900px] lg:pt-20"
     >
       {/* DESKTOP AMBIENT LIGHT */}
       <div className="pointer-events-none absolute top-[70px] right-[-120px] hidden h-[620px] w-[620px] rounded-full bg-brand/[0.07] blur-[100px] lg:block" />
@@ -320,7 +320,7 @@ function Hero({ t }) {
       </div>
 
       {/* HERO CONTENT */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-14 lg:flex lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-[250px] lg:flex lg:min-h-[820px] lg:items-center lg:px-8 lg:py-24">
         <div className="relative max-w-3xl">
           {/* STATUS */}
           <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-brand/10 bg-white/85 px-4 py-2 backdrop-blur-md">
@@ -370,9 +370,9 @@ function Hero({ t }) {
             </a>
           </div>
 
-          {/* MOBILE CODE WINDOW - OVERLAY UNDER CTA */}
-          <div className="pointer-events-none absolute top-[calc(100%+18px)] left-[120px] z-0 block w-[500px] rotate-[1.5deg] lg:hidden">
-            <div className="relative overflow-hidden rounded-[26px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.13)]">
+          {/* MOBILE CODE WINDOW */}
+          <div className="pointer-events-none absolute top-[calc(100%+22px)] left-1/2 z-0 block w-[92vw] max-w-[500px] -translate-x-1/2 rotate-[1deg] lg:hidden">
+            <div className="relative overflow-hidden rounded-[24px] border border-[#e2e6ed] bg-white shadow-[0_28px_90px_rgba(40,54,84,0.12)]">
               {/* TOP BAR */}
               <div className="flex h-10 items-center justify-between border-b border-[#e8e8eb] px-4">
                 <div className="flex items-center gap-1.5">
@@ -390,12 +390,12 @@ function Hero({ t }) {
               </div>
 
               {/* CODE */}
-              <div className="relative h-[315px] overflow-hidden px-5 py-5">
-                <div className="font-mono text-[10px] leading-[21px]">
+              <div className="relative h-[260px] overflow-hidden px-5 py-5">
+                <div className="font-mono text-[10px] leading-[20px]">
                   {lineData.map((line, index) => (
                     <div
                       key={`mobile-${line.number}`}
-                      className="flex min-h-[21px]"
+                      className="flex min-h-[20px]"
                     >
                       <span className="mr-4 w-5 shrink-0 select-none text-right text-zinc-300">
                         {line.number}
@@ -415,13 +415,16 @@ function Hero({ t }) {
                   ))}
                 </div>
 
-                {/* VERY LIGHT BOTTOM FADE ONLY */}
-                <div className="absolute inset-x-0 bottom-0 h-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.65)_100%)]" />
+                {/* LIGHT BOTTOM FADE */}
+                <div className="absolute inset-x-0 bottom-0 h-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.6)_100%)]" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* MOBILE BOTTOM FADE */}
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] h-12 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,#ffffff_100%)] lg:hidden" />
 
       {/* DESKTOP BOTTOM FADE */}
       <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-[2] hidden h-28 bg-[linear-gradient(to_bottom,rgba(255,255,255,0)_0%,rgba(255,255,255,0.45)_70%,#ffffff_100%)] lg:block" />
