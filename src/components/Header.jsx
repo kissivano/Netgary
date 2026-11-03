@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+\import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -36,20 +36,20 @@ function Header({ language, setLanguage, t }) {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:h-20 lg:px-8">
         {/* LOGO */}
-        <a
-          href="#home"
+        <Link
+          to="/"
           onClick={closeMenu}
           className={`font-heading text-2xl font-bold tracking-tight transition-colors duration-500 ${
             scrolled ? "text-white" : "text-brand"
           }`}
         >
           NETGARY
-        </a>
+        </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           <a
-            href="#about"
+            href="/#about"
             className={`text-sm font-medium transition duration-300 ${
               scrolled
                 ? "text-white/65 hover:text-white"
@@ -60,7 +60,7 @@ function Header({ language, setLanguage, t }) {
           </a>
 
           <a
-            href="#services"
+            href="/#services"
             className={`text-sm font-medium transition duration-300 ${
               scrolled
                 ? "text-white/65 hover:text-white"
@@ -82,20 +82,8 @@ function Header({ language, setLanguage, t }) {
             {t.nav.googleAds}
           </Link>
 
-          <Link
-            to="/visszajelzesek"
-            onClick={closeMenu}
-            className={`text-sm font-medium transition duration-300 ${
-              scrolled
-                ? "text-white/65 hover:text-white"
-                : "text-zinc-500 hover:text-brand"
-            }`}
-          >
-            {t.nav.reviews}
-          </Link>
-
           <a
-            href="#contact"
+            href="/#contact"
             className={`text-sm font-medium transition duration-300 ${
               scrolled
                 ? "text-white/65 hover:text-white"
@@ -108,25 +96,31 @@ function Header({ language, setLanguage, t }) {
 
         {/* RIGHT */}
         <div className="flex items-center gap-4">
-          {/* LANGUAGE SWITCH - DESKTOP */}
+          {/* LANGUAGE SWITCH */}
           <div className="hidden items-center gap-2 text-xs font-medium sm:flex">
             <button
               type="button"
-              onClick={() => setLanguage("hu")}
+              onClick={() => setLanguage("de")}
               className={`transition duration-300 ${
                 scrolled
-                  ? language === "hu"
+                  ? language === "de"
                     ? "text-white"
                     : "text-white/35 hover:text-white"
-                  : language === "hu"
+                  : language === "de"
                     ? "text-brand"
                     : "text-zinc-300 hover:text-brand"
               }`}
             >
-              HU
+              DE
             </button>
 
-            <span className={scrolled ? "text-white/25" : "text-zinc-300"}>
+            <span
+              className={
+                scrolled
+                  ? "text-white/25"
+                  : "text-zinc-300"
+              }
+            >
               /
             </span>
 
@@ -149,7 +143,7 @@ function Header({ language, setLanguage, t }) {
 
           {/* CTA */}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={closeMenu}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition duration-300 sm:text-sm md:px-5 md:py-2.5 ${
               scrolled
@@ -159,13 +153,19 @@ function Header({ language, setLanguage, t }) {
           >
             {t.nav.letsTalk}
 
-            <ArrowUpRight size={15} strokeWidth={1.8} className="shrink-0" />
+            <ArrowUpRight
+              size={15}
+              strokeWidth={1.8}
+              className="shrink-0"
+            />
           </a>
 
           {/* HAMBURGER */}
           <button
             type="button"
-            onClick={() => setMenuOpen((prev) => !prev)}
+            onClick={() =>
+              setMenuOpen((prev) => !prev)
+            }
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             className="relative flex h-6 w-7 flex-col justify-center gap-[5px] md:hidden"
@@ -173,19 +173,29 @@ function Header({ language, setLanguage, t }) {
             <span
               className={`block h-[1.5px] w-7 transition-all duration-300 ${
                 scrolled ? "bg-white" : "bg-brand"
-              } ${menuOpen ? "translate-y-[6.5px] rotate-45" : ""}`}
+              } ${
+                menuOpen
+                  ? "translate-y-[6.5px] rotate-45"
+                  : ""
+              }`}
             />
 
             <span
               className={`block h-[1.5px] w-7 transition-all duration-300 ${
                 scrolled ? "bg-white" : "bg-brand"
-              } ${menuOpen ? "opacity-0" : ""}`}
+              } ${
+                menuOpen ? "opacity-0" : ""
+              }`}
             />
 
             <span
               className={`block h-[1.5px] w-7 transition-all duration-300 ${
                 scrolled ? "bg-white" : "bg-brand"
-              } ${menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""}`}
+              } ${
+                menuOpen
+                  ? "-translate-y-[6.5px] -rotate-45"
+                  : ""
+              }`}
             />
           </button>
         </div>
@@ -194,13 +204,15 @@ function Header({ language, setLanguage, t }) {
       {/* MOBILE MENU */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
-          menuOpen ? "max-h-[540px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen
+            ? "max-h-[470px] opacity-100"
+            : "max-h-0 opacity-0"
         }`}
       >
         <div className="border-t border-white/10 bg-[#22304b] shadow-[0_20px_35px_rgba(15,23,42,0.18)]">
           <nav className="px-6 py-5">
             <a
-              href="#about"
+              href="/#about"
               onClick={closeMenu}
               className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
@@ -208,7 +220,7 @@ function Header({ language, setLanguage, t }) {
             </a>
 
             <a
-              href="#services"
+              href="/#services"
               onClick={closeMenu}
               className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
@@ -223,16 +235,8 @@ function Header({ language, setLanguage, t }) {
               {t.nav.googleAds}
             </Link>
 
-            <Link
-              to="/visszajelzesek"
-              onClick={closeMenu}
-              className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
-            >
-              {t.nav.reviews}
-            </Link>
-
             <a
-              href="#contact"
+              href="/#contact"
               onClick={closeMenu}
               className="block border-b border-white/10 py-4 font-heading text-xl font-medium text-white transition hover:text-white/70"
             >
@@ -243,21 +247,33 @@ function Header({ language, setLanguage, t }) {
             <div className="flex items-center gap-3 pt-5 text-sm font-medium">
               <button
                 type="button"
-                onClick={() => setLanguage("hu")}
+                onClick={() => {
+                  setLanguage("de");
+                  closeMenu();
+                }}
                 className={`transition duration-300 ${
-                  language === "hu" ? "text-white" : "text-white/35"
+                  language === "de"
+                    ? "text-white"
+                    : "text-white/35"
                 }`}
               >
-                HU
+                DE
               </button>
 
-              <span className="text-white/25">/</span>
+              <span className="text-white/25">
+                /
+              </span>
 
               <button
                 type="button"
-                onClick={() => setLanguage("en")}
+                onClick={() => {
+                  setLanguage("en");
+                  closeMenu();
+                }}
                 className={`transition duration-300 ${
-                  language === "en" ? "text-white" : "text-white/35"
+                  language === "en"
+                    ? "text-white"
+                    : "text-white/35"
                 }`}
               >
                 EN
