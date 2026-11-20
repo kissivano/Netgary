@@ -14,6 +14,16 @@ import Footer from "./components/Footer";
 import QuotePage from "./pages/QuotePage";
 import GoogleAdsPage from "./pages/GoogleAdsPage";
 
+function getDefaultLanguage() {
+  const hostname = window.location.hostname;
+
+  if (hostname === "netgary.hu" || hostname.endsWith(".netgary.hu")) {
+    return "hu";
+  }
+
+  return "de";
+}
+
 function HomePage({ language, setLanguage, t }) {
   return (
     <>
@@ -34,7 +44,7 @@ function HomePage({ language, setLanguage, t }) {
 }
 
 function App() {
-  const [language, setLanguage] = useState("de");
+  const [language, setLanguage] = useState(getDefaultLanguage);
 
   const t = translations[language];
 

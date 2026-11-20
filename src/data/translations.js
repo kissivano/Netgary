@@ -1,4 +1,160 @@
 export const translations = {
+  hu: {
+    nav: {
+      about: "Rólunk",
+      services: "Szolgáltatások",
+      googleAds: "Google Ads",
+      contact: "Kapcsolat",
+      letsTalk: "Beszéljünk",
+    },
+
+    hero: {
+      available: "Új projektekre elérhető",
+      line1: "Weboldalakat",
+      line2: "építünk, amelyek",
+      line3: "működnek.",
+      description:
+        "Modern weboldalak és digitális megoldások letisztult designnal, átgondolt fejlesztéssel és a megfelelő technológiával.",
+      primaryButton: "Projekt indítása",
+      secondaryButton: "Szolgáltatások",
+    },
+
+    intro: {
+      label: "Amit csinálunk",
+      title1: "Digitális élményeket",
+      title2: "építünk, amelyek",
+      words: ["modernek.", "gyorsak.", "skálázhatók.", "működnek."],
+      description:
+        "Modern céges weboldalaktól az egyedi webalkalmazásokig a letisztult designt megbízható fejlesztéssel kombináljuk.",
+      items: ["Weboldalak", "Webappok", "Webshopok", "UI / UX"],
+    },
+
+    services: {
+      label: "Szolgáltatások",
+      title: "Amit meg tudunk valósítani.",
+      items: [
+        {
+          number: "01",
+          title: "Webfejlesztés",
+          description:
+            "Gyors, skálázható weboldalak és webalkalmazások modern technológiákkal.",
+        },
+        {
+          number: "02",
+          title: "Webdesign",
+          description:
+            "Letisztult, modern felületek a használhatóságra és vizuális egységre fókuszálva.",
+        },
+        {
+          number: "03",
+          title: "E-commerce",
+          description:
+            "Modern webshopok termék-, teljesítmény- és konverzióközpontú megközelítéssel.",
+        },
+        {
+          number: "04",
+          title: "Performance & Support",
+          description:
+            "Optimalizálás, karbantartás és meglévő digitális projektek folyamatos fejlesztése.",
+        },
+      ],
+    },
+
+    tech: {
+      label: "Technológiák & kompetenciák",
+      capabilities: [
+        "Webfejlesztés",
+        "UI / UX",
+        "E-commerce",
+        "Reszponzív design",
+        "API integráció",
+        "Teljesítmény",
+        "Karbantartás",
+      ],
+    },
+
+    why: {
+      label: "Miért NETGARY",
+      title1: "Kis stúdió.",
+      title2: "Nagy figyelem",
+      title3: "a részletekre.",
+      items: [
+        {
+          number: "01",
+          title: "Közvetlen kommunikáció",
+          text: "Nincsenek felesleges közvetítői szintek. Közvetlenül azzal dolgozol, aki ténylegesen fejleszti a projekted.",
+        },
+        {
+          number: "02",
+          title: "Átgondolt fejlesztés",
+          text: "Minden design- és fejlesztési döntésnek világos célja van, és átgondolt megoldásra épül.",
+        },
+        {
+          number: "03",
+          title: "Kicsi, rugalmas, gyors",
+          text: "A fókuszált munkafolyamat gyorsabb döntéseket, tisztább kivitelezést és kevesebb kompromisszumot tesz lehetővé.",
+        },
+      ],
+    },
+
+    contact: {
+      label: "Kapcsolat",
+      title1: "Szia,",
+      title2: "Kiss Ádám vagyok.",
+      role: "Fejlesztő & NETGARY tulajdonos",
+      description:
+        "Van egy ötleted, új weboldalra van szükséged, vagy továbbfejlesztenéd a meglévő projekted? Írj nekem.",
+      callButton: "WhatsApp",
+      quoteButton: "Egyedi ajánlat kérése",
+      response: "Írj nyugodtan közvetlenül – személyesen velem fogsz beszélni.",
+      footerLine: "Webfejlesztés · Design · Digitális megoldások",
+    },
+
+    quote: {
+      back: "Vissza",
+      label: "Egyedi ajánlat",
+      title1: "Mesélj nekünk",
+      title2: "a projektedről.",
+      description:
+        "Töltsd ki az űrlapot, és a megadott információk alapján elkészítjük az egyedi ajánlatot a projektedre.",
+
+      form: {
+        name: "Név",
+        namePlaceholder: "Teljes neved",
+
+        email: "E-mail",
+        emailPlaceholder: "nev@email.hu",
+
+        source: "Honnan hallottál rólunk?",
+        sourcePlaceholder: "Válassz egy lehetőséget",
+
+        recommendation: "Ajánlás",
+        other: "Egyéb",
+
+        project: "Projekt röviden",
+        projectPlaceholder:
+          "Írd le röviden, milyen weboldalra vagy digitális megoldásra van szükséged...",
+
+        submit: "Ajánlatkérés küldése",
+        sending: "Küldés...",
+
+        success:
+          "Köszönjük! Az ajánlatkérésed megérkezett. Hamarosan jelentkezünk.",
+
+        error:
+          "Hiba történt az ajánlatkérés elküldése közben. Kérjük, próbáld újra.",
+      },
+    },
+
+    footer: {
+      rights: "Minden jog fenntartva.",
+      services: "Szolgáltatások",
+      about: "Rólunk",
+      contact: "Kapcsolat",
+      instagram: "Instagram",
+    },
+  },
+
   de: {
     nav: {
       about: "Über uns",

@@ -96,8 +96,28 @@ function Header({ language, setLanguage, t }) {
 
         {/* RIGHT */}
         <div className="flex items-center gap-4">
-          {/* LANGUAGE SWITCH */}
+          {/* LANGUAGE SWITCH - DESKTOP */}
           <div className="hidden items-center gap-2 text-xs font-medium sm:flex">
+            <button
+              type="button"
+              onClick={() => setLanguage("hu")}
+              className={`transition duration-300 ${
+                scrolled
+                  ? language === "hu"
+                    ? "text-white"
+                    : "text-white/35 hover:text-white"
+                  : language === "hu"
+                    ? "text-brand"
+                    : "text-zinc-300 hover:text-brand"
+              }`}
+            >
+              HU
+            </button>
+
+            <span className={scrolled ? "text-white/25" : "text-zinc-300"}>
+              /
+            </span>
+
             <button
               type="button"
               onClick={() => setLanguage("de")}
@@ -182,7 +202,7 @@ function Header({ language, setLanguage, t }) {
       {/* MOBILE MENU */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden ${
-          menuOpen ? "max-h-[470px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="border-t border-white/10 bg-[#22304b] shadow-[0_20px_35px_rgba(15,23,42,0.18)]">
@@ -221,6 +241,21 @@ function Header({ language, setLanguage, t }) {
 
             {/* MOBILE LANGUAGE */}
             <div className="flex items-center gap-3 pt-5 text-sm font-medium">
+              <button
+                type="button"
+                onClick={() => {
+                  setLanguage("hu");
+                  closeMenu();
+                }}
+                className={`transition duration-300 ${
+                  language === "hu" ? "text-white" : "text-white/35"
+                }`}
+              >
+                HU
+              </button>
+
+              <span className="text-white/25">/</span>
+
               <button
                 type="button"
                 onClick={() => {

@@ -12,6 +12,153 @@ import {
 } from "lucide-react";
 
 const content = {
+  hu: {
+    back: "Vissza",
+    badge: "Google Ads Partner",
+    experience: "6 év Google Ads tapasztalat",
+
+    heroTitle1: "Google Ads kampányok,",
+    heroTitle2: "amik nem csak költenek.",
+
+    heroDescription:
+      "6 éve kezelek Google Ads kampányokat a stratégiától és a méréstől kezdve egészen a folyamatos optimalizálásig. A cél nem egyszerűen több kattintás, hanem több értékes érdeklődő és vásárló.",
+
+    primaryButton: "Kérek kampányelemzést",
+    secondaryButton: "Szolgáltatások",
+
+    stats: [
+      {
+        value: "6 év",
+        label: "Google Ads tapasztalat",
+      },
+      {
+        value: "Google",
+        label: "Ads Partner",
+      },
+      {
+        value: "Folyamatos",
+        label: "optimalizálás",
+      },
+      {
+        value: "Adatalapú",
+        label: "döntések",
+      },
+    ],
+
+    servicesLabel: "Google Ads kezelés",
+    servicesTitle1: "Nem elég elindítani",
+    servicesTitle2: "egy kampányt.",
+
+    servicesDescription:
+      "A jól működő Google Ads rendszer folyamatos elemzést, pontos mérést és rendszeres optimalizálást igényel.",
+
+    services: [
+      {
+        title: "Kampánystratégia",
+        description:
+          "A megfelelő kampánytípusok, célzások és struktúra kialakítása az üzleti céljaid alapján.",
+        icon: Target,
+      },
+      {
+        title: "Kulcsszókutatás",
+        description:
+          "A valóban értékes keresések megtalálása és a felesleges kattintások kizárása.",
+        icon: Search,
+      },
+      {
+        title: "Hirdetések optimalizálása",
+        description:
+          "Hirdetésszövegek, ajánlatok, keresési kifejezések és kampánybeállítások folyamatos fejlesztése.",
+        icon: MousePointerClick,
+      },
+      {
+        title: "Konverziókövetés",
+        description:
+          "GA4, Google Tag Manager és Google Ads konverziók megfelelő beállítása, hogy valódi adatok alapján dönthessünk.",
+        icon: BarChart3,
+      },
+      {
+        title: "Performance Max",
+        description:
+          "PMax kampányok felépítése, optimalizálása és az eredmények folyamatos elemzése.",
+        icon: Settings2,
+      },
+      {
+        title: "Remarketing",
+        description:
+          "A korábbi látogatók újbóli megszólítása releváns kampányokkal és ajánlatokkal.",
+        icon: ArrowUpRight,
+      },
+    ],
+
+    processLabel: "Folyamat",
+    processTitle1: "Átlátható.",
+    processTitle2: "Mérhető. Optimalizálható.",
+
+    process: [
+      {
+        number: "01",
+        title: "Audit",
+        description:
+          "Átnézem a meglévő fiókot, kampányokat, mérést és a legfontosabb optimalizálási lehetőségeket.",
+      },
+      {
+        number: "02",
+        title: "Stratégia",
+        description:
+          "Meghatározzuk a célokat, a kampánystruktúrát, a célzásokat és a prioritásokat.",
+      },
+      {
+        number: "03",
+        title: "Felépítés",
+        description:
+          "Elkészülnek vagy újraszervezésre kerülnek a kampányok és a mérési rendszer.",
+      },
+      {
+        number: "04",
+        title: "Optimalizálás",
+        description:
+          "Az adatok alapján folyamatosan finomítom a kampányokat a jobb eredmények érdekében.",
+      },
+    ],
+
+    advantageLabel: "NETGARY + Google Ads",
+    advantageTitle1: "A hirdetés csak",
+    advantageTitle2: "az egyik fele.",
+
+    advantageDescription:
+      "A kampány eredménye nem csak a Google Ads fiókon múlik. A weboldal sebessége, felépítése, ajánlata és konverziós pontjai ugyanúgy meghatározzák, hogy a kattintásból lesz-e ügyfél.",
+
+    advantages: [
+      "Google Ads és webfejlesztés egy helyen",
+      "Landing oldalak gyors módosítása",
+      "Konverziókövetés technikai beállítása",
+      "Adatalapú fejlesztési javaslatok",
+      "Közvetlen kommunikáció",
+    ],
+
+    ctaLabel: "Google Ads",
+    ctaTitle1: "Nézzük meg,",
+    ctaTitle2: "hol folyik el a kereted.",
+
+    ctaDescription:
+      "Ha már hirdetsz, átnézem a jelenlegi kampányaidat. Ha most kezdenél, felépítjük a megfelelő rendszert az alapoktól.",
+
+    ctaButton: "Egyedi ajánlatot kérek",
+
+    footer: "Google Ads kezelés · Webfejlesztés · Digitális megoldások",
+
+    dashboard: {
+      performance: "Kampányteljesítmény",
+      optimization: "Optimalizálás",
+      clicks: "Kattintások",
+      conversions: "Konverziók",
+      roas: "ROAS",
+      overview: "Kampány áttekintése",
+      active: "Aktív",
+    },
+  },
+
   de: {
     back: "Zurück",
     badge: "Google Ads Partner",
@@ -333,6 +480,20 @@ function GoogleAdsPage({ language, setLanguage }) {
             <div className="flex items-center gap-2 text-xs font-medium">
               <button
                 type="button"
+                onClick={() => setLanguage("hu")}
+                className={`transition duration-300 ${
+                  language === "hu"
+                    ? "text-brand"
+                    : "text-zinc-300 hover:text-brand"
+                }`}
+              >
+                HU
+              </button>
+
+              <span className="text-zinc-300">/</span>
+
+              <button
+                type="button"
                 onClick={() => setLanguage("de")}
                 className={`transition duration-300 ${
                   language === "de"
@@ -374,7 +535,6 @@ function GoogleAdsPage({ language, setLanguage }) {
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-white pt-16 md:pt-20">
         <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
-          {/* LEFT */}
           <div className="max-w-3xl">
             <div className="mb-7 flex flex-wrap items-center gap-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-medium text-brand">
@@ -419,7 +579,6 @@ function GoogleAdsPage({ language, setLanguage }) {
           {/* ADS DASHBOARD */}
           <div className="relative min-w-0">
             <div className="overflow-hidden rounded-[24px] border border-border bg-[#fbfbfc]">
-              {/* DASHBOARD HEADER */}
               <div className="flex h-14 items-center justify-between border-b border-border px-5">
                 <div className="flex gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff605c]" />
@@ -432,7 +591,6 @@ function GoogleAdsPage({ language, setLanguage }) {
                 <div className="w-12" />
               </div>
 
-              {/* DASHBOARD CONTENT */}
               <div className="p-5 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
@@ -450,7 +608,6 @@ function GoogleAdsPage({ language, setLanguage }) {
                   </div>
                 </div>
 
-                {/* METRICS */}
                 <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {dashboardMetrics.map((item, index) => (
                     <div
@@ -474,7 +631,6 @@ function GoogleAdsPage({ language, setLanguage }) {
                   ))}
                 </div>
 
-                {/* GRAPH */}
                 <div className="mt-5 overflow-hidden rounded-[18px] border border-border bg-white p-5">
                   <div className="flex items-center justify-between gap-4">
                     <p className="truncate text-sm font-medium text-brand">
@@ -483,7 +639,6 @@ function GoogleAdsPage({ language, setLanguage }) {
 
                     <span className="flex shrink-0 items-center gap-2 text-xs text-emerald-600">
                       <span className="h-2 w-2 rounded-full bg-emerald-500" />
-
                       {c.dashboard.active}
                     </span>
                   </div>
